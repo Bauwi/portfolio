@@ -1,0 +1,24 @@
+@import "./settings.scss";
+
+html {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+}
+
+html,
+body,
+#root {
+  display: block;
+  height: 100%;
+  width: 100%;
+  color: black;
+  & > div {
+    height: 100%;
+  }
+}

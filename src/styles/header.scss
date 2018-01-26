@@ -1,0 +1,29 @@
+@import "./base/settings.scss";
+.header {
+  background: black;
+  border-bottom: 5px solid red;
+  color: white;
+  height: $header-height;
+  padding: 2rem;
+  & > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
+
+.header__name {
+  font-size: $font-size-extra-large;
+  margin: 0;
+}
+
+.header__navigation {
+  font-size: $font-size-large;
+  a {
+    color: $off-white;
+    text-decoration: none;
+  }
+  span {
+    margin: 0 1rem;
+  }
+}

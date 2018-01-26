@@ -1,0 +1,16 @@
+.store {
+  position: absolute;
+  background: black;
+  height: calc(100vh - 120px);
+  width: 100vw;
+  z-index: 1;
+  top: 120px;
+  opacity: 0;
+  transition: all ease-out 1s;
+}
+
+.store--after {
+  opacity: 1;
+  transform: translate(0, calc(100vh - 160px));
+  transition: all ease-out 1s;
+}
