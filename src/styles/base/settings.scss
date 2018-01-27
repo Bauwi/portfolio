@@ -1,8 +1,11 @@
 // Colors
 $off-white: #f7f7f7;
-$dark-grey: #333333;
+$light-grey: #e4e4e4;
 $grey: #666;
-$blue: #1c88bf;
+$blue: #324d5c;
+$green: #46b29d;
+$orange: #e37b40;
+$red: #f53855;
 $dark-blue: #364051;
 
 // Font Size
@@ -18,4 +21,15 @@ $xl-size: 4.8rem;
 $desktop-breakpoint: 45rem;
 
 // Header
-$header-height: 120px;
+$header-height: 260px;
+$subheader-height: 140px;
+
+// Footer
+$footer-height: 40px;
+
+// Main
+$main-height: calc(100vh - #{$footer-height} - #{$header-height});
+
+// Grid
+$gutter: 2rem;
+$number: 4;

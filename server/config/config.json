@@ -1,0 +1,12 @@
+{
+  "test": {
+    "PORT": 3001,
+    "MONGODB_URI": "mongodb://localhost:27017/PortfolioTest",
+    "JWT_SECRET": "gvereqr3v8ergv14vg3erv31svver3jyk"
+  },
+  "development": {
+    "PORT": 3001,
+    "MONGODB_URI": "mongodb://localhost:27017/Portfolio",
+    "JWT_SECRET": "cykx54xuo34343xrfyix354y3jx354rj"
+  }
+}

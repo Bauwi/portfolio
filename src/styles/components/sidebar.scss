@@ -1,0 +1,30 @@
+@import "./../base/settings.scss";
+
+.sidebar {
+  border-right: 1px solid black;
+  width: 20rem;
+
+  ul {
+    font-size: $font-size-medium;
+    list-style-type: none;
+    margin: 1rem 0;
+    padding: 0;
+    text-align: right;
+    li {
+      background: white;
+      cursor: pointer;
+      font-weight: 200;
+      padding: 1rem;
+      transition: all ease 1s;
+    }
+    li:first-child {
+      background: $light-grey;
+    }
+  }
+  .sidebar--portfolio {
+    li:hover {
+      background: lighten($green, 40);
+      transition: all ease 0.5s;
+    }
+  }
+}

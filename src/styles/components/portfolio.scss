@@ -1,0 +1,48 @@
+@import "./../base/settings.scss";
+@import "./../base/mixins.scss";
+
+.portfolio {
+  display: flex;
+  min-height: 100%;
+  width: 100%;
+}
+
+.portfolio__main {
+  background: $off-white;
+  flex-grow: 1;
+  min-width: 10rem;
+  margin: 1rem;
+  padding: 1rem;
+
+  div > span > div {
+  }
+  .test {
+    height: 20rem;
+  }
+}
+
+.grid-item {
+  border: 1px solid green;
+  width: 15rem;
+  height: 10rem;
+  min-width: 5rem;
+}
+
+.grid-item-height-1 {
+  height: 10rem;
+}
+.grid-item-height-2 {
+  height: 12rem;
+}
+.grid-item-height-3 {
+  height: 14rem;
+}
+.grid-item-height-4 {
+  height: 16rem;
+}
+.grid-item-height-5 {
+  height: 18rem;
+}
+
+.grid-item-background-1 {
+}

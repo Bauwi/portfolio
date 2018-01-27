@@ -1,0 +1,48 @@
+@import "./settings.scss";
+
+[class*="grid-"] {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+[class*="grid-"] > * {
+  flex: 0 0 auto;
+  display: block; /* IE fix */
+  width: calc(100% * 1 / #{$number} - #{$gutter});
+  margin-left: 1rem;
+}
+
+@mixin grid($number:$number, $gutter:$gutter) {
+  & > * {
+    width: calc(100% * 1 - #{$gutter});
+  }
+  & > .flexitem-double {
+    width: calc(100% - #{$gutter});
+  }
+
+  // @media (min-width: $desktop-breakpoint) {
+  //   & > * {
+  //     width: calc(100% * 1 / #{$number} - #{$gutter});
+  //     margin-left: $gutter;
+  //   }
+
+  //   & > .flexitem-double {
+  //     width: calc(100% * 2 / #{$number} - #{$gutter});
+  //     margin-left: $gutter;
+  //   }
+  //   & > .flexitem-triple {
+  //     width: calc(100% * 3 / #{$number} - #{$gutter});
+  //     margin-left: $gutter;
+  //   }
+  //   & > .flexitem-quadruple {
+  //     width: calc(100% * 4 / #{$number} - #{$gutter});
+  //     margin-left: $gutter;
+  //   }
+  //   & > .flexitem-hexuple {
+  //     width: calc(100% * 6 / #{$number} - #{$gutter});
+  //     margin-left: $gutter;
+  //   }
+  // }
+}

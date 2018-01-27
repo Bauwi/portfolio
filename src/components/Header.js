@@ -1,35 +1,57 @@
 import React, { Component } from "react";
 import { NavLink, withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+
+import capitalize from "../utils/capitalize";
 
 export class Header extends Component {
-  handleLeavePage = e => {
-    // this.props.history.listenBefore((location, done) => {
-    //   return new Promise((resolve, reject) => {
-    //     resolve(
-    //       setTimeout(() => {
-    //         console.log("Promise resolved");
-    //       }, 10000)
-    //     );
-    //   }).then(done);
-    // });
-    console.log(this.props.history);
-  };
-
   render() {
+    const cleanLocation = this.props.location.pathname
+      .split("")
+      .slice(1, this.props.location.pathname.length)
+      .join("");
+    const subheaderLeftClassName = `header__sub-header__section header__sub-header__section--left--${cleanLocation}`;
     return (
-      <div className="header">
+      <header className="header">
         <div className="content-container">
-          <h1 className="header__name">KEVIN PHILIPPE</h1>
+          <h1 className="header__name">
+            JOHN <span className="header__surname">DOE</span>{" "}
+          </h1>
           <nav className="header__navigation">
-            <p onClick={this.handleLeavePage}>Portfolio</p>
+            <NavLink to="/resume">RESUME</NavLink>
             <span>/</span>
             <NavLink to="/portfolio">PORTFOLIO</NavLink>
             <span>/</span>
+            <NavLink to="/skills">SKILLS</NavLink>
+            <span>/</span>
             <NavLink to="/more">MORE</NavLink>
+            {this.props.isAuthenticated && (
+              <span>
+                <span>/</span>
+                <NavLink to="/dashboard">DASHBOARD</NavLink>
+              </span>
+            )}
           </nav>
         </div>
-      </div>
+        <header className="header__sub-header">
+          <section className={subheaderLeftClassName}>
+            <p>{capitalize(this.props.history.location.pathname)}</p>
+          </section>
+          <section className="header__sub-header__section header__sub-header__section--right">
+            <p>
+              <i className="fa fa-envelope" />
+              <i className="fa fa-github" />
+              <i className="fa fa-codepen" />
+            </p>
+          </section>
+        </header>
+      </header>
     );
   }
 }
-export default withRouter(Header);
+
+const mapStateToProps = state => ({
+  isAuthenticated: !!state.auth.user
+});
+
+export default withRouter(connect(mapStateToProps)(Header));
