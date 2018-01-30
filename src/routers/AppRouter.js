@@ -46,7 +46,7 @@ export class AppRouter extends Component {
     return (
       <div className="wrapper">
         <Header />
-        <PrivateRoute exact path="/dashboard" component="dashboard" />
+        <PrivateRoute exact path="/dashboard" component="div" />
         <Route
           render={({ location }) => (
             <TransitionGroup component="div" className="main">

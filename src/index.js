@@ -14,6 +14,7 @@ import configureStore from "./store/configureStore";
 import LoadingPage from "./components/LoadingPage";
 
 import { login } from "./actions/auth";
+import { startSetProjects } from "./actions/projects";
 
 // import "normalize-css/normalize.css";
 // import "react-dates/lib/css/_datepicker.css";
@@ -25,6 +26,7 @@ const user = JSON.parse(sessionStorage.getItem("user"));
 if (user && user.token) {
   store.dispatch(login(user));
 }
+store.dispatch(startSetProjects());
 
 const jsx = (
   <Provider store={store}>

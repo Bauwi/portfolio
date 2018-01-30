@@ -13,9 +13,18 @@ const Project = mongoose.model("Project", {
     minLength: 1,
     trim: true
   },
+  type: {
+    type: String,
+    required: true,
+    minLength: 1
+  },
+  options: {
+    type: Array,
+    required: true
+  },
   createdAt: {
     type: Number,
-    default: null
+    required: true
   },
   _creator: {
     type: mongoose.Schema.Types.ObjectId,

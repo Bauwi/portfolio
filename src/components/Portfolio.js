@@ -1,11 +1,20 @@
 import React, { Component } from "react";
 import StackGrid, { transitions } from "react-stack-grid";
+import { connect } from "react-redux";
 
 import randomStyle from "../utils/randomStyle";
 
 const { flip } = transitions;
 
-export default class Portfolio extends Component {
+export class Portfolio extends Component {
+  renderProjects = () => {
+    return this.props.projects.map(project => (
+      <div key={project._id} className={randomStyle()}>
+        <h5 className="grid-item__title">{project.title}</h5>
+      </div>
+    ));
+  };
+
   render() {
     return (
       <div className="content-container portfolio">
@@ -24,48 +33,25 @@ export default class Portfolio extends Component {
         <div className="portfolio__main">
           <StackGrid
             columnWidth={150}
-            gutterWidth={0}
-            gutterHeight={0}
             appearDelay={100}
+            gutterWidth={10}
+            gutterHeight={40}
             appear={flip.appear}
             appeared={flip.appeared}
             enter={flip.enter}
             entered={flip.entered}
             leaved={flip.leaved}
           >
-            <div key="key1" className={randomStyle()}>
-              Item 1
-            </div>
-            <div key="key2" className={randomStyle()}>
-              Item 2
-            </div>
-            <div key="key3" className={randomStyle()}>
-              Item 3
-            </div>
-            <div key="key4" className={randomStyle()}>
-              Item 4
-            </div>
-            <div key="key5" className={randomStyle()}>
-              Item 5
-            </div>
-            <div key="key6" className={randomStyle()}>
-              Item 6
-            </div>
-            <div key="key7" className={randomStyle()}>
-              Item 7
-            </div>
-            <div key="key8" className={randomStyle()}>
-              Item 8
-            </div>
-            <div key="key9" className={randomStyle()}>
-              Item 9
-            </div>
-            <div key="key10" className={randomStyle()}>
-              Item 10
-            </div>
+            {this.renderProjects()}
           </StackGrid>
         </div>
       </div>
     );
   }
 }
+
+const mapStateToProps = state => ({
+  projects: state.projects.projects
+});
+
+export default connect(mapStateToProps)(Portfolio);

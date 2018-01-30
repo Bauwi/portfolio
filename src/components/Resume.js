@@ -1,10 +1,14 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 export default class Resume extends Component {
   render() {
     return (
       <div className="content-container">
         <h1>My Resume</h1>
+        <button>
+          <i className="fa fa-file-pdf-o" /> pdf version
+        </button>
         <ul>
           <li>Academics</li>
           <li>Pro</li>

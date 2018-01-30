@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
-export default class DashboardAnalytics extends Component {
+export default class DashboardSkills extends Component {
   render() {
     return (
       <div>
-        <h2>Analytics</h2>
+        <h2>Skills</h2>
       </div>
     );
   }

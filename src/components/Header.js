@@ -13,25 +13,27 @@ export class Header extends Component {
     const subheaderLeftClassName = `header__sub-header__section header__sub-header__section--left--${cleanLocation}`;
     return (
       <header className="header">
-        <div className="content-container">
-          <h1 className="header__name">
-            JOHN <span className="header__surname">DOE</span>{" "}
-          </h1>
-          <nav className="header__navigation">
-            <NavLink to="/resume">RESUME</NavLink>
-            <span>/</span>
-            <NavLink to="/portfolio">PORTFOLIO</NavLink>
-            <span>/</span>
-            <NavLink to="/skills">SKILLS</NavLink>
-            <span>/</span>
-            <NavLink to="/more">MORE</NavLink>
-            {this.props.isAuthenticated && (
-              <span>
-                <span>/</span>
-                <NavLink to="/dashboard">DASHBOARD</NavLink>
-              </span>
-            )}
-          </nav>
+        <div className="header__main">
+          <div className="content-container">
+            <h1 className="header__name">
+              JOHN <span className="header__surname">DOE</span>{" "}
+            </h1>
+            <nav className="header__navigation">
+              <NavLink to="/resume">RESUME</NavLink>
+              <span>/</span>
+              <NavLink to="/portfolio">PORTFOLIO</NavLink>
+              <span>/</span>
+              <NavLink to="/skills">SKILLS</NavLink>
+              <span>/</span>
+              <NavLink to="/more">MORE</NavLink>
+              {this.props.isAuthenticated && (
+                <span>
+                  <span>/</span>
+                  <NavLink to="/dashboard">DASHBOARD</NavLink>
+                </span>
+              )}
+            </nav>
+          </div>
         </div>
         <header className="header__sub-header">
           <section className={subheaderLeftClassName}>

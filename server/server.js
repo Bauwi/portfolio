@@ -1,19 +1,25 @@
 require("./config/config.js");
 
 const express = require("express");
+const fs = require("fs");
+const path = require("path");
 const _ = require("lodash");
 const bodyParser = require("body-parser");
 const { ObjectID } = require("mongodb");
+const { analyzeProject } = require("./modules/analyzer");
 
 const { mongoose } = require("./db/mongoose");
 const { Project } = require("./models/project");
 const { User } = require("./models/user");
 const { authenticate } = require("./middleware/authenticate");
 
+const publicPath = path.join(__dirname, "../public");
+
 const app = express();
 const port = process.env.PORT;
 
 app.use(bodyParser.json());
+app.use(express.static(publicPath));
 
 /* ************************************************************* */
 /* Add Headers for developpment mode                             */
@@ -46,10 +52,42 @@ if (!process.env.NODE_ENV && port !== 3001) {
   });
 }
 
+app.get("/stats", async (req, res) => {
+  const options = {
+    componentsFolderPath: "src/components/",
+    stats: {
+      public: {
+        path: "public/",
+        extensions: ["html"]
+      },
+      server: {
+        path: "server/",
+        extensions: ["js"]
+      },
+      src: {
+        path: "src/",
+        extensions: ["js", "scss"]
+      }
+    }
+  };
+
+  try {
+    const stats = await analyzeProject(options);
+    fs.writeFile("stats.json", stats);
+    res.send(stats);
+  } catch (error) {
+    console.log(error);
+    res.status(400).send(error);
+  }
+});
+
 app.post("/projects", authenticate, (req, res) => {
   const project = new Project({
     title: req.body.title,
     description: req.body.description,
+    type: req.body.type,
+    options: req.body.options,
+    createdAt: req.body.createdAt,
     _creator: req.user._id
   });
 
@@ -63,10 +101,8 @@ app.post("/projects", authenticate, (req, res) => {
   );
 });
 
-app.get("/projects", authenticate, (req, res) => {
-  Project.find({
-    _creator: req.user._id
-  }).then(
+app.get("/projects", (req, res) => {
+  Project.find({}).then(
     projects => {
       res.send({ projects });
     },

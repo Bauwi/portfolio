@@ -1,5 +1,4 @@
 @import "./../base/settings.scss";
-@import "./../base/mixins.scss";
 
 .portfolio {
   display: flex;
@@ -8,24 +7,42 @@
 }
 
 .portfolio__main {
-  background: $off-white;
+  // background: transparentize($light-grey, 0.6);
   flex-grow: 1;
   min-width: 10rem;
-  margin: 1rem;
+  margin: 1rem 1rem 3rem 1rem;
   padding: 1rem;
 
-  div > span > div {
-  }
   .test {
     height: 20rem;
   }
 }
 
+.grid-item__title {
+  background: rgba(0, 0, 0, 0.7);
+  color: $off-white;
+  font-weight: 900;
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
+
+  position: relative;
+  top: 25%;
+  transition: top ease.5s;
+}
 .grid-item {
+  background-size: cover-fit;
   border: 1px solid green;
   width: 15rem;
   height: 10rem;
   min-width: 5rem;
+
+  &:hover {
+    .grid-item__title {
+      top: 0;
+      transition: top ease.5s;
+    }
+  }
 }
 
 .grid-item-height-1 {
@@ -44,5 +61,27 @@
   height: 18rem;
 }
 
-.grid-item-background-1 {
+.grid-item-pattern-1 {
+  background: url("./pattern1.jpg");
+}
+.grid-item-pattern-2 {
+  background: url("./pattern2.jpg");
+}
+.grid-item-pattern-3 {
+  background: url("./pattern3.jpg");
+}
+.grid-item-pattern-4 {
+  background: url("./pattern4.jpg");
+}
+.grid-item-pattern-5 {
+  background: url("./pattern5.jpg");
+}
+.grid-item-pattern-6 {
+  background: url("./pattern6.jpg");
+}
+.grid-item-pattern-7 {
+  background: url("./pattern7.jpg");
+}
+.grid-item-pattern-8 {
+  background: url("./pattern7.jpg");
 }

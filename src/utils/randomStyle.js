@@ -1,6 +1,7 @@
 const randomStyle = () => {
   const randomHeight = `grid-item-height-${Math.ceil(Math.random() * 5)}`;
-  const className = `grid-item ${randomHeight}`;
+  const randomPattern = `grid-item-pattern-${Math.ceil(Math.random() * 8)}`;
+  const className = `grid-item ${randomHeight} ${randomPattern}`;
   return className;
 };
 

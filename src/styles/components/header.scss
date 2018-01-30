@@ -1,11 +1,13 @@
 @import "./../base/settings.scss";
 
 .header {
-  background: black;
   color: $off-white;
   font-size: $font-size-large;
   height: $header-height;
   margin: 0;
+  h1 {
+    color: $off-white !important;
+  }
   & > div {
     display: flex;
     flex-direction: column;
@@ -23,6 +25,10 @@
   }
 }
 
+.header__main {
+  background: black;
+}
+
 .header__name {
   // font-family: Source Sans Pro, Helvetica, sans-serif;
   font-weight: 900;
@@ -33,7 +39,7 @@
 }
 
 .header__sub-header {
-  background: white;
+  // background: white;
   display: flex;
   height: $subheader-height;
 }
@@ -49,11 +55,11 @@
   }
 }
 .header__sub-header__section--left--resume {
-  background: $blue;
+  background: transparentize($blue, 0.3);
   transition: all ease 1s;
 }
 .header__sub-header__section--left--portfolio {
-  background: $green;
+  background: transparentize($green, 0.3);
   transition: all ease 1s;
 }
 .header__sub-header__section--left--skills {
