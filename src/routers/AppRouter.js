@@ -63,7 +63,6 @@ export class AppRouter extends Component {
             </TransitionGroup>
           )}
         />
-        <Footer />
       </div>
     );
   }

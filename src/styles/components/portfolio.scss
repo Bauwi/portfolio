@@ -2,6 +2,7 @@
 
 .portfolio {
   display: flex;
+  flex-direction: column;
   min-height: 100%;
   width: 100%;
 }
@@ -45,6 +46,10 @@
   }
 }
 
+.grid-item-dimensions {
+  height: 200px;
+}
+
 .grid-item-height-1 {
   height: 10rem;
 }
@@ -61,6 +66,9 @@
   height: 18rem;
 }
 
+.grid-item-pattern-0 {
+  background: url("./pattern0.jpg");
+}
 .grid-item-pattern-1 {
   background: url("./pattern1.jpg");
 }

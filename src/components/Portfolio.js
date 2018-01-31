@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import StackGrid, { transitions } from "react-stack-grid";
 import { connect } from "react-redux";
 
 import randomStyle from "../utils/randomStyle";
+import capitalize from "../utils/capitalize";
 
 const { flip } = transitions;
 
@@ -16,8 +18,20 @@ export class Portfolio extends Component {
   };
 
   render() {
+    const cleanLocation = this.props.location.pathname
+      .split("")
+      .slice(1, this.props.location.pathname.length)
+      .join("");
+    const subheaderLeftClassName = `header__sub-header__section header__sub-header__section--left--${cleanLocation}`;
+
     return (
       <div className="content-container portfolio">
+        <header className="header__sub-header">
+          <section className={subheaderLeftClassName}>
+            <p>{capitalize(this.props.history.location.pathname)}</p>
+          </section>
+        </header>
+
         <div>
           <nav className="sidebar">
             <ul className="sidebar--portfolio">
@@ -35,7 +49,7 @@ export class Portfolio extends Component {
             columnWidth={150}
             appearDelay={100}
             gutterWidth={10}
-            gutterHeight={40}
+            gutterHeight={10}
             appear={flip.appear}
             appeared={flip.appeared}
             enter={flip.enter}
@@ -54,4 +68,4 @@ const mapStateToProps = state => ({
   projects: state.projects.projects
 });
 
-export default connect(mapStateToProps)(Portfolio);
+export default withRouter(connect(mapStateToProps)(Portfolio));

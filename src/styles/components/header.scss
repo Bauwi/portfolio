@@ -1,32 +1,42 @@
 @import "./../base/settings.scss";
 
 .header {
+  display: flex;
   color: $off-white;
   font-size: $font-size-large;
-  height: $header-height;
+  min-height: $header-height;
   margin: 0;
   h1 {
     color: $off-white !important;
   }
   & > div {
+    background: #222;
     display: flex;
     flex-direction: column;
     height: 120px;
-    justify-content: center;
+    width: 6rem;
+    // justify-content: center;
     nav {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-top: 2rem;
       a {
-        color: $off-white;
+        color: $light-grey;
+
+        font-size: 2.5rem;
+        text-align: center;
         text-decoration: none;
-      }
-      span {
-        margin: 0 1rem;
       }
     }
   }
 }
 
 .header__main {
+  display: flex;
+  justify-content: space-between;
   background: black;
+  min-height: 100vh;
 }
 
 .header__name {
@@ -38,43 +48,49 @@
   font-weight: 200;
 }
 
-.header__sub-header {
-  // background: white;
-  display: flex;
-  height: $subheader-height;
-}
-.header__sub-header__section {
+// .header__sub-header {
+//   // background: white;
+//   // display: flex;
+//   // display: none;
+//   height: $subheader-height;
+//   p {
+//     font-family: "Tangerine", cursive;
+//     font-size: 4rem;
+//   }
+// }
+.header__footer {
   align-items: center;
   display: flex;
+  flex-direction: column;
   justify-content: flex-end;
-  padding: 5rem;
-  width: 50%;
-  p {
-    font-size: 3rem;
-    font-weight: 900;
+  width: 100%;
+  font-size: 2.5rem;
+  nav > a > i {
+    color: $light-grey;
   }
 }
-.header__sub-header__section--left--resume {
-  background: transparentize($blue, 0.3);
+
+.color-blue {
+  color: $blue !important;
   transition: all ease 1s;
 }
-.header__sub-header__section--left--portfolio {
-  background: transparentize($green, 0.3);
+.color-green {
+  color: $green !important;
   transition: all ease 1s;
 }
-.header__sub-header__section--left--skills {
-  background: $orange;
+.color-pink {
+  color: $pink !important;
   transition: all ease 1s;
 }
-.header__sub-header__section--left--more {
-  background: $red;
+.color-red {
+  color: $red !important;
   transition: all ease 1s;
 }
-.header__sub-header__section--right {
-  // background: red;
-  color: black;
-  max-width: 45rem;
-  i {
-    margin: 0 1rem;
-  }
+.color-lemon {
+  color: $lemon !important;
+  transition: all ease 1s;
+}
+
+.nav-activ {
+  // font-weight: 600;
 }
