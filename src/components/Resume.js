@@ -1,35 +1,47 @@
 import React from "react";
 
-import Slider from "./Slider";
+import Slider from "./slider/Slider";
 import { Element } from "react-scroll";
 
 export default class Resume extends React.Component {
   render() {
     return (
-      <Slider numOfSlides={3}>
+      <Slider numofslides={4}>
         <Element
           name={`insideContainer1`}
+          navname="Academics"
           style={{
             minHeight: "100vh"
           }}
         >
-          Slider 1
+          Academics
         </Element>
         <Element
           name={`insideContainer2`}
+          navname="Professional"
           style={{
             minHeight: "100vh"
           }}
         >
-          slider 2
+          Professional
         </Element>
         <Element
           name={`insideContainer3`}
+          navname="About"
           style={{
             minHeight: "100vh"
           }}
         >
-          Slider 3
+          About
+        </Element>
+        <Element
+          name={`insideContainer4`}
+          navname="New"
+          style={{
+            minHeight: "100vh"
+          }}
+        >
+          New
         </Element>
       </Slider>
     );
