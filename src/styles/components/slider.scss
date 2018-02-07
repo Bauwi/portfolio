@@ -6,17 +6,61 @@
 }
 
 .element {
-  div:nth-child(even) {
+  > div:nth-child(even) {
     background: rgb(36, 36, 36);
   }
-  div:nth-child(odd) {
+  > div:nth-child(odd) {
     background: rgb(41, 41, 41);
   }
 }
-
 .slider-nav {
-  position: absolute;
-  z-index: 99;
+  border-top: none;
+  color: $off-white;
+  display: flex;
+  font-size: 1.6rem;
+  justify-content: flex-end;
+  position: fixed;
+  padding: 1rem 1rem;
+  width: 100%;
+  z-index: 98;
+
+  nav {
+    display: flex;
+    padding-right: 15rem;
+  }
+}
+
+.slider-nav--navlink {
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+  color: rgba(255, 255, 255, 0.2);
+  margin: 0 1rem;
+  transition: all ease, 0.5s;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.slider-nav--navlink--active {
+  color: rgba(255, 255, 255, 0.8);
+  transition: all ease, 0.5s;
+}
+
+.border-red {
+  border-bottom: 1px solid $red;
+  transition: all ease, 0.5s;
+}
+.border-green {
+  border-bottom: 1px solid $green;
+  transition: all ease, 0.5s;
+}
+
+.border-top-red {
+  border-top: 1px solid $red;
+  transition: all ease, 0.5s;
+}
+.border-top-green {
+  border-top: 1px solid $green;
+  transition: all ease, 0.5s;
 }
 
 .dotstyle ul {
@@ -94,10 +138,16 @@
   z-index: 10;
 }
 
-.dotstyle-drawcircle li svg circle {
-  opacity: 0;
-  fill: none;
+.dotstyle-drawcircle--green svg circle {
   stroke: $green;
+}
+
+.dotstyle-drawcircle--red svg circle {
+  stroke: $red;
+}
+
+.dotstyle-drawcircle svg circle {
+  fill: rgba(255, 255, 255, 0.11);
   stroke-width: 3;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -121,4 +171,13 @@
   -webkit-transition: stroke-dashoffset 0.3s, opacity 0.15s;
   transition: stroke-dashoffset 0.3s, opacity 0.15s;
   transition-delay: 0.15s;
+}
+
+@include for-phone-only {
+  .slider-nav {
+    justify-content: flex-start;
+    nav {
+      padding-right: 0;
+    }
+  }
 }

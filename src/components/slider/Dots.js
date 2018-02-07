@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { scroller, Link } from "react-scroll";
+import { scroller } from "react-scroll";
 
 export default class Dots extends Component {
   scrollToWithContainer(to) {
@@ -7,27 +7,27 @@ export default class Dots extends Component {
       duration: 500,
       delay: 0,
       smooth: "easeInOutCubic",
-      containerId: "containerElement"
+      containerId: this.props.containerId
     });
   }
+
+  handleDotClick = index => {
+    this.props.onLinkClick(`${this.props.containerID}${index}`);
+  };
 
   renderDots = () =>
     this.props.dots.map((child, i) => {
       const className =
-        child.props.name === this.props.currentSlide ? "current" : "";
+        child.props.name === this.props.currentSlide
+          ? `dotstyle-drawcircle--${this.props.color} current`
+          : "";
 
       return (
-        <li key={child.props.name} className={className}>
-          <Link
-            activeClass="active"
-            onSetActive={this.handleSetActive}
-            to={child.props.name}
-            spy={true}
-            smooth={true}
-            duration={250}
-            containerId="containerElement"
-            style={{ display: "inline-block" }}
-          />
+        <li
+          onClick={() => this.handleDotClick(i + 1)}
+          key={child.props.name}
+          className={className}
+        >
           <svg
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"

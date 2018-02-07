@@ -18,7 +18,8 @@ const publicPath = path.join(__dirname, "../public");
 const app = express();
 const port = process.env.PORT;
 
-app.use(bodyParser.json());
+app.use(bodyParser.json({ limit: "50mb" }));
+app.use(bodyParser.urlencoded({ extended: true, limit: "5mb" }));
 app.use(express.static(publicPath));
 
 /* ************************************************************* */
@@ -88,7 +89,8 @@ app.post("/projects", authenticate, (req, res) => {
     type: req.body.type,
     options: req.body.options,
     createdAt: req.body.createdAt,
-    _creator: req.user._id
+    _creator: req.user._id,
+    imgSrc: req.body.imgSrc
   });
 
   project.save().then(

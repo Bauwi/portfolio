@@ -1,0 +1,16 @@
+.tree__container {
+  position: relative;
+  opacity: 1;
+  transition: opacity ease-out 0.5s;
+  transition-delay: 0.5s;
+}
+
+.tree--hidden {
+  opacity: 0;
+  transition: opacity ease-in 0.5s;
+  div,
+  div > div,
+  div > div > svg {
+    height: 0 !important;
+  }
+}

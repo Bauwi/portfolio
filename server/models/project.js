@@ -29,6 +29,10 @@ const Project = mongoose.model("Project", {
   _creator: {
     type: mongoose.Schema.Types.ObjectId,
     required: true
+  },
+  imgSrc: {
+    type: String,
+    required: true
   }
 });
 

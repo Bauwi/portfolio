@@ -2,17 +2,20 @@ import React, { Component } from "react";
 
 import Dots from "./Dots";
 
-import { Link, Element, scroller } from "react-scroll";
+import { Link, Element, scroller, scrollSpy, Events } from "react-scroll";
 
 export default class Slider extends Component {
   state = {
-    current: "insideContainer1",
+    current: `${this.props.name}1`,
     coordsYStart: 0,
     moveY: 0
   };
 
   handleSetActive = current => {
-    this.setState(() => ({ current }));
+    //Time out to smooth navigation. Avoid scrollY to trigger a multiple level move.
+    setTimeout(() => {
+      this.setState(() => ({ current }));
+    }, 300);
   };
 
   scrollToWithContainer(to) {
@@ -20,23 +23,30 @@ export default class Slider extends Component {
       duration: 500,
       delay: 0,
       smooth: "easeInOutCubic",
-      containerId: "containerElement"
+      containerId: this.props.name
     });
   }
 
+  onLinkClick = to => {
+    console.log(to);
+    this.scrollToWithContainer(to);
+    this.setState(() => ({ current: to }));
+  };
+
   wheel = e => {
-    console.log(React.Children);
     const { current } = this.state;
     const currentIndex = parseInt(
-      current.slice(current.length - 1, current.length)
+      current.slice(current.length - 1, current.length),
+      10
     );
-    const next = `insideContainer${currentIndex + 1}`;
-    const previous = `insideContainer${currentIndex - 1}`;
-
+    const next = `${this.props.name}${currentIndex + 1}`;
+    const previous = `${this.props.name}${currentIndex - 1}`;
     if (Math.abs(e.deltaY) >= 100) {
       if (e.deltaY > 0 && currentIndex !== this.props.numofslides) {
+        this.handleSetActive(next);
         this.scrollToWithContainer(next);
       } else if (e.deltaY < 0 && currentIndex !== 1) {
+        this.handleSetActive(previous);
         this.scrollToWithContainer(previous);
       }
     }
@@ -62,15 +72,18 @@ export default class Slider extends Component {
 
     const { current } = this.state;
     const currentIndex = parseInt(
-      current.slice(current.length - 1, current.length)
+      current.slice(current.length - 1, current.length),
+      10
     );
-    const next = `insideContainer${currentIndex + 1}`;
-    const previous = `insideContainer${currentIndex - 1}`;
+    const next = `${this.props.name}${currentIndex + 1}`;
+    const previous = `${this.props.name}${currentIndex - 1}`;
 
     if (Math.abs(moveY) >= 70) {
       if (moveY > 0 && currentIndex !== this.props.numofslides) {
+        this.handleSetActive(next);
         this.scrollToWithContainer(next);
       } else if (moveY < 0 && currentIndex !== 1) {
+        this.handleSetActive(previous);
         this.scrollToWithContainer(previous);
       }
     }
@@ -85,29 +98,33 @@ export default class Slider extends Component {
         onTouchMove={e => this.touchMove(e)}
         onTouchEnd={e => this.touchEnd()}
       >
-        <nav className="slider-nav">
-          {React.Children.map(this.props.children, (child, i) => {
-            return (
-              <Link
-                activeClass="active"
-                onSetActive={this.handleSetActive}
-                to={this.props.children[i].props.name}
-                spy={true}
-                smooth={true}
-                duration={250}
-                containerId="containerElement"
-                style={{ display: "inline-block", margin: "20px" }}
-              >
-                {this.props.children[i].props.navname}
-              </Link>
-            );
-          })}
-        </nav>
-
+        <div className="slider-nav">
+          <nav>
+            {React.Children.map(this.props.children, (child, i) => {
+              const navClassname =
+                child.props.name === this.state.current
+                  ? `slider-nav--navlink slider-nav--navlink--active border-${
+                      this.props.color
+                    }`
+                  : `slider-nav--navlink`;
+              return (
+                <div
+                  className={navClassname}
+                  onClick={() => {
+                    this.scrollToWithContainer(child.props.name);
+                    this.setState(() => ({ current: child.props.name }));
+                  }}
+                >
+                  {child.props.navname}
+                </div>
+              );
+            })}
+          </nav>
+        </div>
         <Element
           name="test7"
           className="element"
-          id="containerElement"
+          id={this.props.name}
           style={{
             position: "relative",
             height: "100vh",
@@ -119,7 +136,13 @@ export default class Slider extends Component {
           })}
         </Element>
 
-        <Dots dots={this.props.children} currentSlide={this.state.current} />
+        <Dots
+          onLinkClick={this.onLinkClick}
+          containerID={this.props.name}
+          dots={this.props.children}
+          currentSlide={this.state.current}
+          color={this.props.color}
+        />
       </div>
     );
   }

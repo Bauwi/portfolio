@@ -1,6 +1,6 @@
 [
   {
-    "numberOfComponents": 17
+    "numberOfComponents": 32
   },
   {
     "folder": "public/",
@@ -26,8 +26,8 @@
       {
         "extension": "js",
         "extensionStats": {
-          "total": 547,
-          "source": 466,
+          "total": 553,
+          "source": 472,
           "comment": 13,
           "single": 9,
           "block": 4,
@@ -44,26 +44,26 @@
       {
         "extension": "js",
         "extensionStats": {
-          "total": 1521,
-          "source": 1368,
-          "comment": 47,
-          "single": 47,
+          "total": 2211,
+          "source": 1968,
+          "comment": 69,
+          "single": 69,
           "block": 0,
-          "mixed": 9,
-          "empty": 115,
+          "mixed": 14,
+          "empty": 188,
           "todo": 0
         }
       },
       {
         "extension": "scss",
         "extensionStats": {
-          "total": 394,
-          "source": 337,
-          "comment": 20,
-          "single": 20,
-          "block": 0,
-          "mixed": 2,
-          "empty": 39,
+          "total": 984,
+          "source": 858,
+          "comment": 30,
+          "single": 27,
+          "block": 3,
+          "mixed": 3,
+          "empty": 99,
           "todo": 0
         }
       }

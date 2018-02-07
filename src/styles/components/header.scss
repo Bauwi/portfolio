@@ -48,16 +48,34 @@
   font-weight: 200;
 }
 
-// .header__sub-header {
-//   // background: white;
-//   // display: flex;
-//   // display: none;
-//   height: $subheader-height;
-//   p {
-//     font-family: "Tangerine", cursive;
-//     font-size: 4rem;
-//   }
-// }
+.header__location {
+  font-size: 1.3rem;
+  font-weight: 900;
+  z-index: 3;
+  overflow: hidden;
+  margin-left: 2rem;
+  text-align: center;
+  width: 10px;
+  word-wrap: break-word;
+}
+
+.header__location--resume {
+  color: $green !important;
+  transition: all ease 1s;
+}
+.header__location--portfolio {
+  color: $pink !important;
+  transition: all ease 1s;
+}
+.header__location--skills {
+  color: $red !important;
+  transition: all ease 1s;
+}
+.header__location--more {
+  color: $lemon !important;
+  transition: all ease 1s;
+}
+
 .header__footer {
   align-items: center;
   display: flex;

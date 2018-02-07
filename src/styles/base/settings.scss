@@ -4,8 +4,8 @@ $light-grey: #e4e4e4;
 $grey: #666;
 $blue: #00d8ff;
 $green: #00ff18;
-$pink: #ff00e1;
-$red: #ff0000;
+$pink: #bf00ff;
+$red: #ff003f;
 $lemon: #d0ff00;
 $dark-blue: #364051;
 
@@ -34,3 +34,32 @@ $main-height: calc(100vh - #{$footer-height} - #{$header-height});
 // Grid
 $gutter: 2rem;
 $number: 4;
+
+// Filters
+$filters-height: 30vh;
+
+@mixin for-phone-only {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) {
+    @content;
+  }
+}
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) {
+    @content;
+  }
+}
+@mixin for-desktop-up {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) {
+    @content;
+  }
+}

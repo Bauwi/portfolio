@@ -1,0 +1,53 @@
+@import "./../base/settings.scss";
+
+.bookmark {
+  background: rgb(36, 36, 36);
+  border: 2px solid grey;
+  border-top: none;
+  border-radius: 0 0 20px 20px;
+  color: $off-white;
+  font-size: 2rem;
+  position: fixed;
+  top: 0;
+  right: 50px;
+  // background: red;
+  padding: 1rem 1rem;
+  z-index: 99;
+
+  transition: all ease 0.5s;
+
+  &:hover {
+    cursor: pointer;
+    transition: all ease 0.5s;
+  }
+}
+
+.bookmark--resume {
+  border-color: $green;
+  &:hover {
+    color: $green;
+  }
+}
+
+.bookmark--portfolio {
+  position: absolute;
+  border-color: $pink;
+  &:hover {
+    color: $pink;
+  }
+}
+
+.bookmark--front-skills {
+  border-color: $red;
+  &:hover {
+    color: $red;
+  }
+}
+
+@include for-phone-only {
+  .bookmark {
+    top: 40px;
+    right: 0;
+    transform: rotate(90deg);
+  }
+}

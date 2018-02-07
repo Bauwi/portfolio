@@ -16,7 +16,8 @@ const initialState = {
   description: "",
   type: "project",
   createdAt: 0,
-  options: ["HTML5", "CSS3", "JavaScript"]
+  options: ["HTML5", "CSS3", "JavaScript"],
+  imgSrc: ""
 };
 
 export class DashboardProjectsNew extends Component {
@@ -47,6 +48,28 @@ export class DashboardProjectsNew extends Component {
     this.setState(() => ({ options: checkedValues }));
   };
 
+  handleImageChange = e => {
+    const file = e.target.files[0];
+    console.log(file);
+
+    if (!file.type.includes("image/")) {
+      alert("Please select an image file");
+      return;
+    }
+
+    if (typeof FileReader === "function") {
+      const reader = new FileReader();
+
+      reader.onload = event => {
+        const imgSrc = event.target.result;
+        this.setState(() => ({ imgSrc }));
+      };
+      reader.readAsDataURL(file);
+    } else {
+      alert("Sorry, FileReader API not supported");
+    }
+  };
+
   handleCancel = () => {
     console.log("Clicked cancel button");
     this.setState({
@@ -68,7 +91,8 @@ export class DashboardProjectsNew extends Component {
           description: this.state.description,
           type: this.state.type,
           options: this.state.options,
-          createdAt: date
+          createdAt: date,
+          imgSrc: this.state.imgSrc
         })
         .then(() => {
           this.setState(() => initialState);
@@ -79,6 +103,7 @@ export class DashboardProjectsNew extends Component {
   };
 
   render() {
+    console.log(this.state.imgSrc);
     const plainOptions = [
       "HTML5",
       "CSS3",
@@ -116,50 +141,59 @@ export class DashboardProjectsNew extends Component {
         >
           <form className="project-form">
             <div>
-              <label htmlFor="">Title:</label>
-              <Input
-                value={this.state.title}
-                type="text"
-                onChange={this.handleTitleChange}
-              />
-              <label htmlFor="">Description:</label>
-              <TextArea
-                value={this.state.description}
-                type="text"
-                onChange={this.handleDescriptionChange}
-              />
-            </div>
-
-            <div>
-              <label htmlFor="">Type: </label>
-              <Select
-                defaultValue="project"
-                style={{ width: 120 }}
-                onChange={this.handleSelectChange}
-              >
-                <Option value="project">Project</Option>
-                <Option value="boilerplate">Boilerplate</Option>
-                <Option value="snippet">Snippet</Option>
-                <Option value="algorithmics">algorithmics</Option>
-              </Select>
-            </div>
-            <div>
-              <label htmlFor="">Date (MM/DD/YYYY): </label>
-              <Input
-                onChange={this.handleDateChange}
-                value={this.state.createdAt}
-                type="text"
-              />
-            </div>
-            <div>
-              <h3>Technologies</h3>
               <div>
-                <CheckboxGroup
-                  options={plainOptions}
-                  defaultValue={["HTML5", "CSS3", "JavaScript"]}
-                  onChange={this.onCheckboxChange}
+                <label htmlFor="">Title:</label>
+                <Input
+                  value={this.state.title}
+                  type="text"
+                  onChange={this.handleTitleChange}
+                />
+                <label htmlFor="">Description:</label>
+                <TextArea
+                  value={this.state.description}
+                  type="text"
+                  onChange={this.handleDescriptionChange}
                 />
               </div>
+
+              <div>
+                <label htmlFor="">Type: </label>
+                <Select
+                  defaultValue="Project"
+                  style={{ width: 120 }}
+                  onChange={this.handleSelectChange}
+                >
+                  <Option value="Projects">Project</Option>
+                  <Option value="Boilerplates">Boilerplate</Option>
+                  <Option value="Snippets">Snippet</Option>
+                  <Option value="Node Modules">Node Module</Option>
+                </Select>
+              </div>
+              <div>
+                <label htmlFor="">Date (MM/DD/YYYY): </label>
+                <Input
+                  onChange={this.handleDateChange}
+                  value={this.state.createdAt}
+                  type="text"
+                />
+              </div>
+              <div>
+                <h3>Technologies</h3>
+                <div>
+                  <CheckboxGroup
+                    options={plainOptions}
+                    defaultValue={["HTML5", "CSS3", "JavaScript"]}
+                    onChange={this.onCheckboxChange}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="project-form--right">
+              <p>Another part</p>
+              <div className="project-form__image__container">
+                <img src={this.state.imgSrc} alt="" />
+              </div>
+              <input type="file" onChange={this.handleImageChange} />
             </div>
           </form>
         </Modal>

@@ -9,8 +9,7 @@ export class DashboardProjectsTable extends Component {
     const columns = [
       {
         title: "Title",
-        dataIndex: "title",
-        render: text => <a href="#">{text}</a>
+        dataIndex: "title"
       },
       {
         title: "Description",

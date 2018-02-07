@@ -1,22 +1,20 @@
 import React, { Component } from "react";
-import { Router, Route, Switch, Link, NavLink } from "react-router-dom";
+import { Route } from "react-router-dom";
 import createHistory from "history/createBrowserHistory";
 import TransitionGroup from "react-transition-group/TransitionGroup";
 import AnimatedSwitch from "../components/animated_switch";
 
-import HeaderRoute from "./HeaderRoute";
 import PrivateRoute from "./PrivateRoute";
 
 import Home from "../components/Home";
 import Missed from "../components/missed";
-import Resume from "../components/Resume";
-import Portfolio from "../components/Portfolio";
-import Skills from "../components/Skills";
+import Resume from "../components/resume/Resume";
+import Portfolio from "../components/portfolio/Portfolio";
+import Skills from "../components/skills/Skills";
 import LoginPage from "../components/LoginPage";
 import Dashboard from "../components/dashboard/Dashboard";
 
 import Header from "../components/Header";
-import Footer from "../components/Footer";
 
 export const history = createHistory();
 

@@ -6,7 +6,14 @@
 @import "./styles/components/footer.scss";
 @import "./styles/components/sidebar.scss";
 @import "./styles/components/slider.scss";
+@import "./styles/components/bookmark.scss";
+@import "./styles/components/loader.scss";
+@import "./styles/components/modal.scss";
+@import "./styles/components/styled-wrapper.scss";
+@import "./styles/components/trees.scss";
 
+@import "./styles/components/home.scss";
+@import "./styles/components/resume.scss";
 @import "./styles/components/portfolio.scss";
 @import "./styles/components/dashboard.scss";
 @import "./styles/components/skills.scss";
@@ -14,3 +21,4 @@
 @import "~antd/dist/antd.css";
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
 @import url("https://fonts.googleapis.com/css?family=Tangerine");
+@import url("https://fonts.googleapis.com/css?family=Special+Elite");

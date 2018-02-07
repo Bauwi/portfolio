@@ -59,4 +59,5 @@ body,
   width: 100%;
   min-height: $main-height;
   overflow: auto;
+  overflow-x: hidden;
 }

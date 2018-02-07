@@ -1,0 +1,25 @@
+@import "./../base/settings.scss";
+
+.home {
+  border: 1px solid $blue;
+  display: flex;
+  flex-grow: 1;
+  margin: 3rem;
+}
+
+.home__left {
+  width: 50%;
+}
+.home__right {
+  width: 50%;
+  img {
+    height: 80%;
+    max-width: 100%;
+    transition: all 3s ease-out;
+
+    &:hover {
+      transform: rotateY(720deg);
+      transition: transform 3s ease-out;
+    }
+  }
+}

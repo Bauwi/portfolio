@@ -10,8 +10,16 @@
 
 .project-form {
   display: flex;
-  flex-direction: column;
   div {
     // margin-bottom: 2rem;
+  }
+}
+
+.project-form__image__container {
+  max-width: 12rem;
+  img {
+    width: 100%;
+    height: 12rem;
+    object-fit: cover;
   }
 }
