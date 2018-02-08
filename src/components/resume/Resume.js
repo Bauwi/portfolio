@@ -1,29 +1,38 @@
 import React from "react";
 import { Icon } from "antd";
+import axios from "axios";
 
 import Slider from "../slider/Slider";
 import { Element } from "react-scroll";
 
-import ResumeYear from "./ResumeYear";
+import ResumeRecent from "./ResumeRecent";
 import ResumeAcademics from "./ResumeAcademics";
 import ResumePro from "./ResumePro";
+import ResumeMore from "./ResumeMore";
 
 export default class Resume extends React.Component {
+  downloadPDF = () => {
+    const response = {
+      file: "http://localhost:3001/download"
+    };
+    window.location.href = response.file;
+  };
+
   render() {
     return (
       <div>
-        <div className="bookmark bookmark--resume">
+        <div className="bookmark bookmark--resume" onClick={this.downloadPDF}>
           <Icon type="file-pdf" />
         </div>
         <Slider numofslides={4} name="resumeSlider" color="green">
           <Element
             name={`resumeSlider1`}
-            navname="This Year"
+            navname="Recent"
             style={{
               minHeight: "100vh"
             }}
           >
-            <ResumeYear />
+            <ResumeRecent />
           </Element>
           <Element
             name={`resumeSlider2`}
@@ -45,12 +54,12 @@ export default class Resume extends React.Component {
           </Element>
           <Element
             name={`resumeSlider4`}
-            navname="About"
+            navname="More"
             style={{
               minHeight: "100vh"
             }}
           >
-            About
+            <ResumeMore />
           </Element>
         </Slider>
       </div>

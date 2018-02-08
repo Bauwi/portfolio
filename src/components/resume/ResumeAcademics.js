@@ -18,6 +18,7 @@ const WrapperFooter = (
 const academics = [
   {
     title: "Master 1 History",
+    graduated: false,
     year: "2015 - 2016",
     subtitle: {
       description: "Master 1 Recherche Histoire",
@@ -31,6 +32,7 @@ const academics = [
   },
   {
     title: "Licence History",
+    graduated: true,
     year: "2012 - 2015",
     subtitle: {
       description: "Licence Histoire",
@@ -45,6 +47,7 @@ const academics = [
   },
   {
     title: "DUT Mesures Physiques",
+    graduated: true,
     year: "2009 - 2011",
     subtitle: {
       description: "Diplome Universitaire de Technologie Mesures Physiques",
@@ -58,6 +61,7 @@ const academics = [
   },
   {
     title: "Classes Préparatoires Commerce",
+    graduated: false,
     year: "2008 - 2009",
     subtitle: {
       description: "Classes Préparatoires aux Grandes Ecoloes de commerce",
@@ -71,6 +75,7 @@ const academics = [
   },
   {
     title: "Baccalauréat Scientifique",
+    graduated: true,
     year: "2008",
     subtitle: {
       description: "Baccalauréat Scientifique - option SVT",
@@ -92,14 +97,13 @@ export default class ResumeAcademics extends Component {
           <header>
             <div>
               <h3>{academic.title}</h3>
-
+              {academic.graduated && <i className="fa fa-graduation-cap" />}
               <p>{academic.year}</p>
             </div>
           </header>
           <div className="resume__section__item__subtitle">
-            <p>{academic.subtitle.description}</p>
             <p>
-              <Icon type="pushpin" /> {academic.subtitle.location}
+              <Icon type="environment" /> {academic.subtitle.location}
             </p>
           </div>
           {academic.infos.speciality && (

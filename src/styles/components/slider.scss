@@ -180,4 +180,29 @@
       padding-right: 0;
     }
   }
+  .dotstyle__wrapper {
+    display: flex;
+    position: absolute;
+    top: calc(100vh - 40px);
+    height: 20px;
+    width: 100%;
+  }
+  .dotstyle {
+    width: 100%;
+  }
+  .dotstyle ul {
+    flex-direction: row;
+    justify-content: center;
+    margin: auto 1rem;
+  }
 }
+
+// .dotstyle__wrapper {
+//   display: flex;
+//   align-items: center;
+//   height: 100vh;
+
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+// }

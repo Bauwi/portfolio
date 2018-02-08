@@ -53,6 +53,11 @@ if (!process.env.NODE_ENV && port !== 3001) {
   });
 }
 
+app.get("/download", function(req, res) {
+  var file = publicPath + "/docs/resume.pdf";
+  res.download(file); // Set disposition and send it.
+});
+
 app.get("/stats", async (req, res) => {
   const options = {
     componentsFolderPath: "src/components/",
