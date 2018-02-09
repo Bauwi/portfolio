@@ -7,8 +7,7 @@
   height: 100vh;
 
   justify-content: center;
-  margin: 2rem 1rem;
-
+  overflow-x: hidden;
   h2,
   h3,
   h4 {
@@ -20,13 +19,18 @@
 }
 
 .skills__section {
-  background: rgba(0, 0, 0, 0.3);
+  // background: rgba(0, 0, 0, 0.3);
   display: flex;
+  justify-content: center;
   padding: 1rem;
   margin: 0 1rem;
   overflow-y: auto;
+  width: 90%;
   div {
     margin: 2rem;
+  }
+  h3 {
+    border-bottom: 1px solid$off-white;
   }
 }
 

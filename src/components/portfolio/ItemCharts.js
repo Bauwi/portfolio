@@ -1,34 +1,6 @@
 import React, { Component } from "react";
 var Doughnut = require("react-chartjs").Doughnut;
 
-var chartData = [
-  {
-    value: 1968,
-    color: "#FDB45C",
-    highlight: "#FFC870",
-    label: "JavaScript - Front"
-  },
-  {
-    value: 38,
-    color: "#F7464A",
-    highlight: "#FF5A5E",
-    label: "HTML5"
-  },
-  {
-    value: 858,
-    color: "#46BFBD",
-    highlight: "#5AD3D1",
-    label: "SCSS"
-  },
-
-  {
-    value: 472,
-    color: "#949FB1",
-    highlight: "#A8B3C5",
-    label: "JavaScript - Back"
-  }
-];
-
 const chartOptions = {
   //Boolean - Show a backdrop to the scale label
   scaleShowLabelBackdrop: true,
@@ -69,6 +41,33 @@ const chartOptions = {
 
 export default class ItemCharts extends Component {
   render() {
+    var chartData = [
+      {
+        value: this.props.stats.clientjs,
+        color: "#FDB45C",
+        highlight: "#FFC870",
+        label: "JavaScript - Front"
+      },
+      {
+        value: this.props.stats.html,
+        color: "#F7464A",
+        highlight: "#FF5A5E",
+        label: "HTML5"
+      },
+      {
+        value: this.props.stats.css,
+        color: "#46BFBD",
+        highlight: "#5AD3D1",
+        label: "SCSS"
+      },
+
+      {
+        value: this.props.stats.serverjs,
+        color: "#949FB1",
+        highlight: "#A8B3C5",
+        label: "JavaScript - Back"
+      }
+    ];
     return (
       <Doughnut
         data={chartData}

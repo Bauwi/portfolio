@@ -23,7 +23,7 @@ export default class SkillsBack extends Component {
           <div className="skills__front__title">
             <h2>Back-End Skills</h2>
           </div>
-          <div className={`skills__section border-top-red`}>
+          <div className={`skills__section`}>
             <div>
               <h3>
                 Basics :{" "}

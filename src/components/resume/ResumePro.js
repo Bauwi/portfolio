@@ -101,9 +101,7 @@ export default class ResumePro extends Component {
           <div>
             <h2>Pro</h2>
           </div>
-          <ul className="resume__section border-top-green">
-            {this.renderPros()}
-          </ul>
+          <ul className="resume__section">{this.renderPros()}</ul>
         </StyledWrapper>
       </div>
     );

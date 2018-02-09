@@ -10,9 +10,9 @@
   padding: 2rem 0;
   .styled-wrapper__header > p,
   footer > p {
-    color: rgba(112, 112, 112, 0.2);
+    color: rgba(112, 112, 112, 0.5);
     font-family: "Special Elite", cursive;
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-style: italic;
     margin-bottom: 0;
   }
@@ -53,7 +53,7 @@
 }
 
 .styled-wrapper__text {
-  color: rgb(100, 100, 100);
+  color: rgb(150, 150, 150);
   font-family: "Special Elite", cursive;
   font-size: 1.4rem;
   font-style: italic;
@@ -62,7 +62,7 @@
 }
 
 .styled-wrapper__text--curly {
-  color: rgba(100, 100, 100, 0.3);
+  color: rgba(100, 100, 100, 0.5);
   font-size: 2rem;
   margin: 0;
 }

@@ -33,6 +33,15 @@ const Project = mongoose.model("Project", {
   imgSrc: {
     type: String,
     required: true
+  },
+  url: {
+    type: String,
+    minLength: 1
+  },
+  github: {
+    type: String,
+    required: true,
+    minLength: 1
   }
 });
 

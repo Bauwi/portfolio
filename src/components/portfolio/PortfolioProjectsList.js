@@ -18,7 +18,7 @@ export class PortfolioProjectsList extends Component {
   };
 
   render() {
-    console.log(this.props);
+    console.log(this.props.projects);
     const { size: { width } } = this.props;
     return (
       <div className="portfolio__main">

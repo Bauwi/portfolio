@@ -77,9 +77,7 @@ export default class ResumeMore extends Component {
           <div>
             <h2>More</h2>
           </div>
-          <ul className="resume__section border-top-green">
-            {this.renderMore()}
-          </ul>
+          <ul className="resume__section">{this.renderMore()}</ul>
         </StyledWrapper>
       </div>
     );

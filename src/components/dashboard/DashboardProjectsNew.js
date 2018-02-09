@@ -14,10 +14,12 @@ const initialState = {
   confirmLoading: false,
   title: "",
   description: "",
-  type: "project",
+  type: "Projects",
   createdAt: 0,
   options: ["HTML5", "CSS3", "JavaScript"],
-  imgSrc: ""
+  imgSrc: "",
+  url: "",
+  github: ""
 };
 
 export class DashboardProjectsNew extends Component {
@@ -69,6 +71,15 @@ export class DashboardProjectsNew extends Component {
       alert("Sorry, FileReader API not supported");
     }
   };
+  handleUrlChange = e => {
+    const url = e.target.value;
+    this.setState(() => ({ url }));
+  };
+
+  handleGithubChange = e => {
+    const github = e.target.value;
+    this.setState(() => ({ github }));
+  };
 
   handleCancel = () => {
     console.log("Clicked cancel button");
@@ -92,7 +103,9 @@ export class DashboardProjectsNew extends Component {
           type: this.state.type,
           options: this.state.options,
           createdAt: date,
-          imgSrc: this.state.imgSrc
+          imgSrc: this.state.imgSrc,
+          url: this.state.url,
+          github: this.state.github
         })
         .then(() => {
           this.setState(() => initialState);
@@ -194,6 +207,22 @@ export class DashboardProjectsNew extends Component {
                 <img src={this.state.imgSrc} alt="" />
               </div>
               <input type="file" onChange={this.handleImageChange} />
+              <div>
+                <label htmlFor="">live: </label>
+                <Input
+                  onChange={this.handleUrlChange}
+                  value={this.state.url}
+                  type="text"
+                />
+              </div>
+              <div>
+                <label htmlFor="">github: </label>
+                <Input
+                  onChange={this.handleGithubChange}
+                  value={this.state.github}
+                  type="text"
+                />
+              </div>
             </div>
           </form>
         </Modal>

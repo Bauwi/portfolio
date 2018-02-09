@@ -23,7 +23,7 @@ export default class SkillsBasics extends Component {
       <header className="skills__wrapper">
         <StyledWrapper header={WrapperHeader} footer={WrapperFooter}>
           <h2>Basics</h2>
-          <div className="skills__section border-top-red">
+          <div className="skills__section">
             <div className="">
               <h3>VanillaJS Principles : </h3>
               <p className="styled-wrapper__text styled-wrapper__text--curly">{`{`}</p>

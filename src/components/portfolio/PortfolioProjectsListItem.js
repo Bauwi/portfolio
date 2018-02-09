@@ -25,7 +25,14 @@ export default class PortfolioProjectsListItem extends Component {
   };
 
   render() {
-    const { imgSrc, title, type, description, options } = this.props.project;
+    const {
+      imgSrc,
+      title,
+      type,
+      description,
+      options,
+      stats
+    } = this.props.project;
     return (
       <div>
         <div className="grid-item" onClick={this.showModal}>
@@ -67,7 +74,7 @@ export default class PortfolioProjectsListItem extends Component {
                 <section className="modal-content--portfolio--right__middle">
                   <div className="modal-content--portfolio--right__chart">
                     <h4>Stats</h4>
-                    <ItemCharts />
+                    <ItemCharts stats={stats} />
                   </div>
                   <div className="modal-content--portfolio--right__techno">
                     {renderLogos(options)}

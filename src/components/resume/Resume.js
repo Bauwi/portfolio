@@ -1,7 +1,6 @@
 import React from "react";
 import { Icon } from "antd";
 import axios from "axios";
-
 import Slider from "../slider/Slider";
 import { Element } from "react-scroll";
 

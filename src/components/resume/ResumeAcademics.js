@@ -123,9 +123,7 @@ export default class ResumeAcademics extends Component {
           <div>
             <h2>Academics</h2>
           </div>
-          <ul className="resume__section border-top-green">
-            {this.renderAcademics()}
-          </ul>
+          <ul className="resume__section  ">{this.renderAcademics()}</ul>
         </StyledWrapper>
       </div>
     );

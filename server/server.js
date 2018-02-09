@@ -95,7 +95,9 @@ app.post("/projects", authenticate, (req, res) => {
     options: req.body.options,
     createdAt: req.body.createdAt,
     _creator: req.user._id,
-    imgSrc: req.body.imgSrc
+    imgSrc: req.body.imgSrc,
+    url: req.body.url,
+    github: req.body.github
   });
 
   project.save().then(

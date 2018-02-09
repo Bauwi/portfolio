@@ -210,9 +210,7 @@ export default class ResumeRecent extends Component {
           <div>
             <h2>Recent</h2>
           </div>
-          <ul className="resume__section border-top-green">
-            {this.renderYear()}
-          </ul>
+          <ul className="resume__section">{this.renderYear()}</ul>
         </StyledWrapper>
       </div>
     );
