@@ -4,7 +4,7 @@ import { Modal, Button, Checkbox, Select, Input } from "antd";
 import moment from "moment";
 
 import { startAddProject } from "../../actions/projects";
-
+import { readStats } from "../../utils/readStats";
 const CheckboxGroup = Checkbox.Group;
 const Option = Select.Option;
 const { TextArea } = Input;
@@ -19,7 +19,8 @@ const initialState = {
   options: ["HTML5", "CSS3", "JavaScript"],
   imgSrc: "",
   url: "",
-  github: ""
+  github: "",
+  stats: {}
 };
 
 export class DashboardProjectsNew extends Component {
@@ -81,6 +82,12 @@ export class DashboardProjectsNew extends Component {
     this.setState(() => ({ github }));
   };
 
+  handleStatsChange = e => {
+    readStats(e.target.files[0]).then(res =>
+      this.setState(() => ({ stats: res }))
+    );
+  };
+
   handleCancel = () => {
     console.log("Clicked cancel button");
     this.setState({
@@ -105,7 +112,8 @@ export class DashboardProjectsNew extends Component {
           createdAt: date,
           imgSrc: this.state.imgSrc,
           url: this.state.url,
-          github: this.state.github
+          github: this.state.github,
+          stats: this.state.stats
         })
         .then(() => {
           this.setState(() => initialState);
@@ -116,7 +124,6 @@ export class DashboardProjectsNew extends Component {
   };
 
   render() {
-    console.log(this.state.imgSrc);
     const plainOptions = [
       "HTML5",
       "CSS3",
@@ -222,6 +229,28 @@ export class DashboardProjectsNew extends Component {
                   value={this.state.github}
                   type="text"
                 />
+              </div>
+              <div>
+                <p>stats</p>
+                <input type="file" onChange={this.handleStatsChange} />
+                <p>
+                  components ={" "}
+                  {this.state.stats.numOfComponents
+                    ? this.state.stats.numOfComponents
+                    : 0}
+                </p>
+                <p>
+                  clientjs ={" "}
+                  {this.state.stats.clientjs ? this.state.stats.clientjs : 0}
+                </p>
+                <p>
+                  serverjs ={" "}
+                  {this.state.stats.serverjs ? this.state.stats.serverjs : 0}
+                </p>
+                <p>css = {this.state.stats.css ? this.state.stats.css : 0}</p>
+                <p>
+                  html = {this.state.stats.html ? this.state.stats.html : 0}
+                </p>
               </div>
             </div>
           </form>

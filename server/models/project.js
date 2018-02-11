@@ -42,6 +42,28 @@ const Project = mongoose.model("Project", {
     type: String,
     required: true,
     minLength: 1
+  },
+  stats: {
+    numOfComponents: {
+      type: Number,
+      required: true
+    },
+    clientjs: {
+      type: Number,
+      required: true
+    },
+    serverjs: {
+      type: Number,
+      required: true
+    },
+    css: {
+      type: Number,
+      required: true
+    },
+    html: {
+      type: Number,
+      required: true
+    }
   }
 });
 

@@ -66,18 +66,18 @@ export default class PortfolioProjectsListItem extends Component {
 
               <section className="modal-content--portfolio--right">
                 <header className="modal-content--portfolio--right__header">
-                  <p>
-                    A basic Chat app built with React/Redux, Express and
-                    MongoDb. Include authentication and websockets.
-                  </p>
+                  <p>"{description}"</p>
                 </header>
                 <section className="modal-content--portfolio--right__middle">
                   <div className="modal-content--portfolio--right__chart">
-                    <h4>Stats</h4>
+                    <h4>Stats (lines)</h4>
                     <ItemCharts stats={stats} />
                   </div>
-                  <div className="modal-content--portfolio--right__techno">
-                    {renderLogos(options)}
+                  <div>
+                    <h4>Technologies</h4>
+                    <div className="modal-content--portfolio--right__techno">
+                      {renderLogos(options)}
+                    </div>
                   </div>
                 </section>
                 <footer className="modal-content--portfolio--right__footer">

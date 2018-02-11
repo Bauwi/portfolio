@@ -25,7 +25,7 @@ const logos = {
 export default technologies => {
   return technologies.map(techno => {
     if (logos.hasOwnProperty(techno)) {
-      return <div>{logos[techno]}</div>;
+      return <li key={techno}>{logos[techno]}</li>;
     }
     return null;
   });

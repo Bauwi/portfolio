@@ -28,23 +28,27 @@
   span {
     color: $off-white;
   }
+  h4 {
+    color: $off-white;
+    text-align: center;
+  }
 }
 //portfolio
 .modal-content--portfolio {
   align-items: center;
   display: flex;
-  flex-direction: column;
+  height: calc(80vh - 55px);
   width: 100%;
 }
 
 .modal-content--portfolio--left {
   width: 30rem;
   min-width: 30rem;
-  margin: 3rem;
+  height: 100%;
 
   img {
     width: 100%;
-    height: 50%;
+    height: 100%;
     object-fit: cover;
   }
 }
@@ -64,6 +68,9 @@
   align-items: center;
   flex-grow: 0.5;
   padding: 1rem;
+  p {
+    font-style: italic;
+  }
 }
 
 .modal-content--portfolio--right__middle {
@@ -76,9 +83,9 @@
   // align-items: center;
   display: flex;
   justify-content: center;
-  max-width: 50%;
+  max-width: 100%;
   flex-wrap: wrap;
-  div {
+  li {
     height: 4rem;
     width: 4rem;
     margin: 1rem;
@@ -93,10 +100,6 @@
   display: flex;
   flex-direction: column;
   // justify-content: center;
-
-  h4 {
-    color: $off-white;
-  }
 }
 
 .modal-content--portfolio--right__footer {

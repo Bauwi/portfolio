@@ -18,8 +18,17 @@ const publicPath = path.join(__dirname, "../public");
 const app = express();
 const port = process.env.PORT;
 
-app.use(bodyParser.json({ limit: "50mb" }));
-app.use(bodyParser.urlencoded({ extended: true, limit: "5mb" }));
+app.use(
+  bodyParser.json({
+    limit: "50mb"
+  })
+);
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+    limit: "5mb"
+  })
+);
 app.use(express.static(publicPath));
 
 /* ************************************************************* */
@@ -53,10 +62,18 @@ if (!process.env.NODE_ENV && port !== 3001) {
   });
 }
 
+/* ************************************************************* */
+/* Route for handling resume download                            */
+/* ************************************************************* */
+
 app.get("/download", function(req, res) {
   var file = publicPath + "/docs/resume.pdf";
   res.download(file); // Set disposition and send it.
 });
+
+/* ************************************************************* */
+/* Display stats for actual app                                  */
+/* ************************************************************* */
 
 app.get("/stats", async (req, res) => {
   const options = {
@@ -87,6 +104,10 @@ app.get("/stats", async (req, res) => {
   }
 });
 
+/* ************************************************************* */
+/* Handle project management                                     */
+/* ************************************************************* */
+
 app.post("/projects", authenticate, (req, res) => {
   const project = new Project({
     title: req.body.title,
@@ -97,7 +118,8 @@ app.post("/projects", authenticate, (req, res) => {
     _creator: req.user._id,
     imgSrc: req.body.imgSrc,
     url: req.body.url,
-    github: req.body.github
+    github: req.body.github,
+    stats: req.body.stats
   });
 
   project.save().then(
@@ -113,7 +135,9 @@ app.post("/projects", authenticate, (req, res) => {
 app.get("/projects", (req, res) => {
   Project.find({}).then(
     projects => {
-      res.send({ projects });
+      res.send({
+        projects
+      });
     },
     e => {
       res.status(400).send(e);
@@ -134,7 +158,9 @@ app.get("/projects/:id", authenticate, (req, res) => {
       if (!project) {
         return res.status(404).send();
       }
-      res.send({ project });
+      res.send({
+        project
+      });
     })
     .catch(e => res.status(400).send());
 });
@@ -155,7 +181,9 @@ app.delete("/projects/:id", authenticate, (req, res) => {
         return res.status(404).send();
       }
 
-      res.status(200).send({ project });
+      res.status(200).send({
+        project
+      });
     })
     .catch(e => res.status(400).send());
 });
@@ -180,18 +208,28 @@ app.patch("/projects/:id", authenticate, (req, res) => {
       _id: id,
       _creator: req.user._id
     },
-    { $set: body },
-    { new: true }
+    {
+      $set: body
+    },
+    {
+      new: true
+    }
   )
     .then(project => {
       if (!project) {
         return res.status(404).send();
       }
 
-      res.send({ project });
+      res.send({
+        project
+      });
     })
     .catch(e => res.status(400).send());
 });
+
+/* ************************************************************* */
+/* Handle users management                                       */
+/* ************************************************************* */
 
 app.post("/users", async (req, res) => {
   const user = new User(_.pick(req.body, ["password", "username"]));
@@ -239,4 +277,6 @@ app.listen(port, () => {
   console.log(`Started up at port ${port}`);
 });
 
-module.exports = { app };
+module.exports = {
+  app
+};
