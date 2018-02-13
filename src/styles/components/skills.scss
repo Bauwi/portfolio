@@ -35,10 +35,34 @@
 }
 
 .skills__section--stats {
-  flex-direction: column;
+  // flex-direction: column;
+  align-items: flex-end;
   justify-content: center;
+  overflow-x: hidden;
+  p {
+    font-size: 2rem;
+  }
   span {
+    font-size: 2rem;
+  }
+  li > span {
     font-size: 3rem;
+    transition: 2s;
+  }
+  span:nth-child(1) > li > span {
+    color: #ffb3ba;
+  }
+  span:nth-child(2) > li > span {
+    color: #ffdfba;
+  }
+  span:nth-child(3) > li > span {
+    color: #ffffba;
+  }
+  span:nth-child(4) > li > span {
+    color: #baffc9;
+  }
+  span:nth-child(5) > li > span {
+    color: #bae1ff;
   }
 }
 
