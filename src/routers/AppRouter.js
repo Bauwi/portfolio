@@ -6,13 +6,14 @@ import AnimatedSwitch from "../components/animated_switch";
 
 import PrivateRoute from "./PrivateRoute";
 
-import Home from "../components/Home";
+import Home from "../components/home/Home";
 import Missed from "../components/missed";
 import Resume from "../components/resume/Resume";
 import Portfolio from "../components/portfolio/Portfolio";
 import Skills from "../components/skills/Skills";
 import LoginPage from "../components/LoginPage";
 import Dashboard from "../components/dashboard/Dashboard";
+import NotFound from "../components/NotFound";
 
 import Header from "../components/Header";
 
@@ -56,7 +57,7 @@ export class AppRouter extends Component {
                 <Route exact path="/login" component={LoginPage} />
                 <Route exact path="/dashboard" component={Dashboard} />
 
-                <Route component={Missed} />
+                <Route component={NotFound} />
               </AnimatedSwitch>
             </TransitionGroup>
           )}

@@ -9,7 +9,6 @@ html {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  
 }
 
 body {
@@ -61,5 +60,5 @@ body,
   width: 100%;
   min-height: $main-height;
   overflow: auto;
-  overflow-x: hidden;
+  overflow: hidden;
 }

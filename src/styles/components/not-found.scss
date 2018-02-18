@@ -1,0 +1,72 @@
+.referee {
+  fill: none;
+  stroke: white;
+  stroke-width: 3;
+  stroke-dasharray: 3500;
+  stroke-dashoffset: 3500;
+  animation: referee 3s linear forwards;
+  animation-delay: 1s;
+}
+
+.card {
+  opacity: 0;
+  fill: yellow;
+  animation: card 0.5s ease-in forwards;
+  animation-delay: 4s;
+}
+
+@keyframes referee {
+  from {
+    stroke-dashoffset: 3500;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes card {
+  from {
+    opacity: 0;
+    transform: scale(4);
+    transform-origin: 50% 50%;
+  }
+  to {
+    opacity: 0.7;
+    transform: scale(1);
+    transform-origin: 50% 50%;
+  }
+}
+
+.not-found {
+  display: flex;
+  height: 100%;
+  @for $i from 1 through 38 {
+    .delay-#{$i} {
+      animation-delay: calc(1s + (0.15s * #{$i}));
+    }
+  }
+  svg {
+    height: 100%;
+    width: 100%;
+    g {
+      path {
+        fill: white;
+        animation: letters 0.15s ease-in forwards;
+        opacity: 0;
+      }
+    }
+  }
+}
+
+@keyframes letters {
+  from {
+    opacity: 0;
+    transform: scale(4);
+    transform-origin: 50% 50%;
+  }
+  to {
+    opacity: 0.7;
+    transform: scale(1);
+    transform-origin: 50% 50%;
+  }
+}

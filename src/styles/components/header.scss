@@ -1,6 +1,7 @@
 @import "./../base/settings.scss";
 
 .header {
+  background: rgba(150, 150, 150, 0.3) !important;
   display: flex;
   color: $off-white;
   font-size: $font-size-large;

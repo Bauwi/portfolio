@@ -13,8 +13,11 @@ export class Header extends Component {
     );
     const headerLocationClassname = `header__location header__location--${cleanLocation}`;
     console.log(cleanLocation);
+    const headerClassName = cleanLocation
+      ? "header"
+      : "header animated-sidebar";
     return (
-      <header className="header">
+      <header className={headerClassName}>
         <div className="header__main">
           <nav className="header__navigation">
             <NavLink to="/" activeClassName="nav-activ color-blue">
