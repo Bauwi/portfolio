@@ -1,35 +1,40 @@
 import React, { Component } from "react";
+import { Link, withRouter } from "react-router-dom";
 
-export default class Infos extends Component {
+export class Infos extends Component {
+  handleRoute = route => {
+    this.props.history.push(route);
+  };
+
   render() {
     return (
       <div className="infos">
-        <svg viewBox="0 0 5078.63 3317.69">
+        <svg viewBox="0 0 5154.17 3318.49">
           <g id="contact">
             <text
               fill="#fff"
               fontFamily="Helvetica-BoldOblique, Helvetica"
-              fontSize="150"
+              fontSize="250"
               stroke="#fff"
               strokeWidth="92"
-              transform="translate(91.13 204.12)"
+              transform="translate(166.67 276.82)"
             >
-              Contact me !
+              Feel free to contact me !
             </text>
             <text
               fontFamily="Helvetica-BoldOblique, Helvetica"
-              fontSize="150"
-              transform="translate(91.13 204.12)"
+              fontSize="250"
+              transform="translate(166.67 276.82)"
             >
-              Contact me !
+              Feel free to contact me !
             </text>
             <text
-              fill="#fff"
+              fill="none"
               fontFamily="Helvetica-BoldOblique, Helvetica"
               fontSize="144.59"
               stroke="#fff"
               strokeWidth="92"
-              transform="translate(2401.47 3202.15)"
+              transform="translate(2477.01 3202.95)"
             >
               Contact
             </text>
@@ -39,15 +44,16 @@ export default class Infos extends Component {
               fontSize="144.59"
               stroke="#000"
               strokeWidth="65"
-              transform="translate(2401.47 3202.15)"
+              transform="translate(2477.01 3202.95)"
             >
               Contact
             </text>
             <text
+              onClick={() => this.handleRoute("/contact")}
               fill="#f2f2f2"
               fontFamily="Helvetica-BoldOblique, Helvetica"
               fontSize="144.59"
-              transform="translate(2401.47 3202.15)"
+              transform="translate(2477.01 3202.95)"
             >
               Contact
             </text>
@@ -56,27 +62,27 @@ export default class Infos extends Component {
             <text
               fill="#fff"
               fontFamily="Helvetica-BoldOblique, Helvetica"
-              fontSize="150"
+              fontSize="250"
               stroke="#fff"
               strokeWidth="92"
-              transform="translate(91.13 204.12)"
+              transform="translate(166.67 276.82)"
             >
-              Please, check my Portfolio here...
+              Please, check my Portfolio...
             </text>
             <text
               fontFamily="Helvetica-BoldOblique, Helvetica"
-              fontSize="150"
-              transform="translate(91.13 204.12)"
+              fontSize="250"
+              transform="translate(166.67 276.82)"
             >
-              Please, check my Portfolio here...
+              Please, check my Portfolio...
             </text>
             <text
-              fill="#fff"
+              fill="none"
               fontFamily="Helvetica-BoldOblique, Helvetica"
               fontSize="144.59"
               stroke="#fff"
               strokeWidth="92"
-              transform="translate(950.45 3202.15)"
+              transform="translate(1025.99 3202.95)"
             >
               Portfolio
             </text>
@@ -86,15 +92,16 @@ export default class Infos extends Component {
               fontSize="144.59"
               stroke="#000"
               strokeWidth="65"
-              transform="translate(950.45 3202.15)"
+              transform="translate(1025.99 3202.95)"
             >
               Portfolio
             </text>
             <text
+              onClick={() => this.handleRoute("/portfolio")}
               fill="#f2f2f2"
               fontFamily="Helvetica-BoldOblique, Helvetica"
               fontSize="144.59"
-              transform="translate(950.45 3202.15)"
+              transform="translate(1025.99 3202.95)"
             >
               Portfolio
             </text>
@@ -103,33 +110,27 @@ export default class Infos extends Component {
             <text
               fill="#fff"
               fontFamily="Helvetica-BoldOblique, Helvetica"
-              fontSize="150"
+              fontSize="250"
               stroke="#fff"
               strokeWidth="92"
-              transform="translate(163.82 204.12)"
+              transform="translate(239.36 276.82)"
             >
-              ...And
-              <tspan x="458.28" y="0">
-                T
-              </tspan>
-              <tspan x="538.84" y="0">
-                ake a look at my Skills here
-              </tspan>
+              ...and take a look at my skills.
             </text>
             <text
               fontFamily="Helvetica-BoldOblique, Helvetica"
-              fontSize="150"
-              transform="translate(190.25 204.12)"
+              fontSize="250"
+              transform="translate(239.36 276.82)"
             >
-              ...And take a look at my Skills here
+              ...and take a look at my skills.
             </text>
             <text
-              fill="#fff"
+              fill="none"
               fontFamily="Helvetica-BoldOblique, Helvetica"
               fontSize="144.59"
               stroke="#fff"
               strokeWidth="92"
-              transform="translate(1779.03 3202.15)"
+              transform="translate(1854.57 3202.95)"
             >
               Skills
             </text>
@@ -138,15 +139,16 @@ export default class Infos extends Component {
               fontSize="144.59"
               stroke="#000"
               strokeWidth="65"
-              transform="translate(1779.03 3202.15)"
+              transform="translate(1854.57 3202.95)"
             >
               Skills
             </text>
             <text
+              onClick={() => this.handleRoute("/skills")}
               fill="#f2f2f2"
               fontFamily="Helvetica-BoldOblique, Helvetica"
               fontSize="144.59"
-              transform="translate(1779.03 3202.15)"
+              transform="translate(1854.57 3202.95)"
             >
               Skills
             </text>
@@ -156,21 +158,7 @@ export default class Infos extends Component {
               fill="#f2f2f2"
               fontFamily="MyriadPro-It, Myriad Pro"
               fontSize="96.39"
-              transform="translate(992.86 2442.86)"
-            >
-              Red
-              <tspan x="144.68" y="0">
-                u
-              </tspan>
-              <tspan x="195.1" y="0">
-                x
-              </tspan>
-            </text>
-            <text
-              fill="#f2f2f2"
-              fontFamily="MyriadPro-It, Myriad Pro"
-              fontSize="96.39"
-              transform="translate(1336.8 2442.86)"
+              transform="translate(1036 2599.39)"
             >
               Rea
               <tspan x="144.39" y="0">
@@ -184,7 +172,21 @@ export default class Infos extends Component {
               fill="#f2f2f2"
               fontFamily="MyriadPro-It, Myriad Pro"
               fontSize="96.39"
-              transform="translate(1679.04 2448.25)"
+              transform="translate(1379.94 2599.39)"
+            >
+              Red
+              <tspan x="144.68" y="0">
+                u
+              </tspan>
+              <tspan x="195.1" y="0">
+                x
+              </tspan>
+            </text>
+            <text
+              fill="#f2f2f2"
+              fontFamily="MyriadPro-It, Myriad Pro"
+              fontSize="96.39"
+              transform="translate(1722.18 2604.78)"
             >
               Exp
               <tspan x="138.42" y="0">
@@ -198,7 +200,7 @@ export default class Infos extends Component {
               fill="#f2f2f2"
               fontFamily="MyriadPro-It, Myriad Pro"
               fontSize="96.39"
-              transform="translate(2068.8 2442.86)"
+              transform="translate(2111.95 2609.39)"
             >
               MongoDB
             </text>
@@ -206,7 +208,7 @@ export default class Infos extends Component {
               fill="#f2f2f2"
               fontFamily="MyriadPro-It, Myriad Pro"
               fontSize="96.39"
-              transform="translate(2551.35 2442.86)"
+              transform="translate(2594.49 2607.39)"
             >
               and Mo
               <tspan x="295.44" y="0">
@@ -219,19 +221,104 @@ export default class Infos extends Component {
             <text
               fill="#fff"
               fontFamily="Helvetica-BoldOblique, Helvetica"
-              fontSize="150"
+              fontSize="250"
               stroke="#fff"
               strokeWidth="92"
-              transform="translate(82.63 201.05)"
+              transform="translate(158.17 273.75)"
             >
-              ...familiar with React, Redux, Express, MongoDB and more !
+              ...familiar with :
             </text>
             <text
               fontFamily="Helvetica-BoldOblique, Helvetica"
-              fontSize="150"
-              transform="translate(82.63 201.05)"
+              fontSize="250"
+              transform="translate(158.17 273.75)"
             >
-              ...familiar with React, Redux, Express, MongoDB and more !
+              ...familiar with :
+            </text>
+            <text
+              fill="#fff"
+              fontFamily="Helvetica-BoldOblique, Helvetica"
+              fontSize="250"
+              stroke="#fff"
+              strokeWidth="92"
+              transform="translate(104.3 273.75)"
+            >
+              React
+            </text>
+            <text
+              fontFamily="Helvetica-BoldOblique, Helvetica"
+              fontSize="250"
+              transform="translate(104.3 273.75)"
+            >
+              React
+            </text>
+            <text
+              fill="#fff"
+              fontFamily="Helvetica-BoldOblique, Helvetica"
+              fontSize="250"
+              stroke="#fff"
+              strokeWidth="92"
+              transform="translate(104.3 273.75)"
+            >
+              Redux
+            </text>
+            <text
+              fontFamily="Helvetica-BoldOblique, Helvetica"
+              fontSize="250"
+              transform="translate(104.3 273.75)"
+            >
+              Redux
+            </text>
+            <text
+              fill="#fff"
+              fontFamily="Helvetica-BoldOblique, Helvetica"
+              fontSize="250"
+              stroke="#fff"
+              strokeWidth="92"
+              transform="translate(104.3 273.75)"
+            >
+              Express
+            </text>
+            <text
+              fontFamily="Helvetica-BoldOblique, Helvetica"
+              fontSize="250"
+              transform="translate(104.3 273.75)"
+            >
+              Express
+            </text>
+            <text
+              fill="#fff"
+              fontFamily="Helvetica-BoldOblique, Helvetica"
+              fontSize="250"
+              stroke="#fff"
+              strokeWidth="92"
+              transform="translate(104.3 273.75)"
+            >
+              MongoDB
+            </text>
+            <text
+              fontFamily="Helvetica-BoldOblique, Helvetica"
+              fontSize="250"
+              transform="translate(104.3 273.75)"
+            >
+              MongoDB
+            </text>
+            <text
+              fill="#fff"
+              fontFamily="Helvetica-BoldOblique, Helvetica"
+              fontSize="250"
+              stroke="#fff"
+              strokeWidth="92"
+              transform="translate(85.65 273.75)"
+            >
+              And more !
+            </text>
+            <text
+              fontFamily="Helvetica-BoldOblique, Helvetica"
+              fontSize="250"
+              transform="translate(85.65 273.75)"
+            >
+              And more !
             </text>
           </g>
           <g id="Front-End_Developper">
@@ -241,7 +328,7 @@ export default class Infos extends Component {
               fontSize="192.79"
               stroke="#00f3ff"
               strokeWidth="95"
-              transform="translate(962.41 1989.87)"
+              transform="translate(1037.95 1990.66)"
             >
               Front-End Developer
             </text>
@@ -250,36 +337,36 @@ export default class Infos extends Component {
               fontSize="192.79"
               stroke="#00f3ff"
               strokeWidth="0.25"
-              transform="translate(956.05 1989.87)"
+              transform="translate(1031.59 1990.66)"
             >
               Front-End Developer
             </text>
             <text
               fill="#fff"
               fontFamily="Helvetica-BoldOblique, Helvetica"
-              fontSize="150"
+              fontSize="250"
               stroke="#fff"
               strokeWidth="92"
-              transform="translate(94.67 201.05)"
+              transform="translate(170.21 273.75)"
             >
-              I’m a Front-End Developer
-              <tspan x="1808.57" y="0">
+              I’m a Front-End Develope
+              <tspan x="3014.28" y="0">
                 r
               </tspan>
-              <tspan x="1858.74" y="0">
+              <tspan x="3097.9" y="0">
                 ...
               </tspan>
             </text>
             <text
               fontFamily="Helvetica-BoldOblique, Helvetica"
-              fontSize="150"
-              transform="translate(94.67 201.05)"
+              fontSize="250"
+              transform="translate(170.21 273.75)"
             >
-              I’m a Front-End Developer
-              <tspan x="1808.57" y="0">
+              I’m a Front-End Develope
+              <tspan x="3014.28" y="0">
                 r
               </tspan>
-              <tspan x="1858.74" y="0">
+              <tspan x="3097.9" y="0">
                 ...
               </tspan>
             </text>
@@ -287,14 +374,14 @@ export default class Infos extends Component {
           <g id="Hi">
             <polygon
               fill="#00e7ff"
-              points="249.31 1435.7 794.84 1435.7 99.65 1604.67 249.31 1435.7"
+              points="324.85 1436.5 870.38 1436.5 175.19 1605.47 324.85 1436.5"
             />
             <text
               fontFamily="Helvetica-BoldOblique, Helvetica"
               fontSize="1056.07"
               stroke="#00e7ff"
               strokeWidth="119"
-              transform="translate(281.83 1318.47)"
+              transform="translate(357.37 1319.27)"
             >
               Hi !
             </text>
@@ -304,7 +391,7 @@ export default class Infos extends Component {
               fontSize="1056.07"
               stroke="#000"
               strokeWidth="35"
-              transform="translate(293.15 1318.47)"
+              transform="translate(368.69 1319.27)"
             >
               Hi !
             </text>
@@ -315,7 +402,7 @@ export default class Infos extends Component {
               fontSize="481.96"
               stroke="#00e7ff"
               strokeWidth="159"
-              transform="translate(2246.91 1278.99)"
+              transform="translate(2322.45 1279.79)"
             >
               I
               <tspan x="87.71" y="0">
@@ -342,7 +429,7 @@ export default class Infos extends Component {
               fontSize="481.96"
               stroke="#000"
               strokeWidth="98"
-              transform="translate(2246.91 1278.99)"
+              transform="translate(2322.45 1279.79)"
             >
               I
               <tspan x="87.71" y="0">
@@ -368,7 +455,7 @@ export default class Infos extends Component {
               fill="#fff"
               fontFamily="SignPainter-HouseScriptSemibold, SignPainter"
               fontSize="481.96"
-              transform="translate(2246.91 1278.02)"
+              transform="translate(2322.45 1278.82)"
             >
               I
               <tspan x="87.71" y="0">
@@ -392,12 +479,14 @@ export default class Infos extends Component {
             </text>
             <polygon
               fill="#00e7ff"
-              points="2987.93 1596.17 3149.87 1345.55 3026.49 1345.55 2987.93 1596.17"
+              points="3063.47 1596.97 3225.41 1346.35 3102.03 1346.35 3063.47 1596.97"
             />
-            <polygon points="3068.22 1301.43 3040.95 1458.33 3135.63 1313.56 3068.22 1301.43" />
+            <polygon points="3143.76 1302.23 3116.49 1459.13 3211.17 1314.35 3143.76 1302.23" />
           </g>
         </svg>
       </div>
     );
   }
 }
+
+export default withRouter(Infos);
