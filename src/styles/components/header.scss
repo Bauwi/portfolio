@@ -1,7 +1,6 @@
 @import "./../base/settings.scss";
 
 .header {
-  background: rgba(150, 150, 150, 0.3) !important;
   display: flex;
   color: $off-white;
   font-size: $font-size-large;
@@ -11,7 +10,6 @@
     color: $off-white !important;
   }
   & > div {
-    background: #222;
     display: flex;
     flex-direction: column;
     height: 120px;
@@ -23,7 +21,7 @@
       justify-content: space-between;
       margin-top: 2rem;
       a {
-        color: $light-grey;
+        color: #677077;
 
         font-size: 2.5rem;
         text-align: center;
@@ -36,7 +34,7 @@
 .header__main {
   display: flex;
   justify-content: space-between;
-  background: black;
+
   min-height: 100vh;
 }
 
@@ -50,6 +48,7 @@
 }
 
 .header__location {
+  color: $yellow;
   font-size: 1.3rem;
   font-weight: 900;
   z-index: 3;
@@ -58,22 +57,7 @@
   text-align: center;
   width: 10px;
   word-wrap: break-word;
-}
 
-.header__location--resume {
-  color: $green !important;
-  transition: all ease 1s;
-}
-.header__location--portfolio {
-  color: $pink !important;
-  transition: all ease 1s;
-}
-.header__location--skills {
-  color: $red !important;
-  transition: all ease 1s;
-}
-.header__location--more {
-  color: $lemon !important;
   transition: all ease 1s;
 }
 
@@ -90,27 +74,7 @@
   }
 }
 
-.color-blue {
-  color: $blue !important;
-  transition: all ease 1s;
-}
-.color-green {
-  color: $green !important;
-  transition: all ease 1s;
-}
-.color-pink {
-  color: $pink !important;
-  transition: all ease 1s;
-}
-.color-red {
-  color: $red !important;
-  transition: all ease 1s;
-}
-.color-lemon {
-  color: $lemon !important;
-  transition: all ease 1s;
-}
-
 .nav-activ {
-  // font-weight: 600;
+  color: $yellow !important;
+  transition: all ease 1s;
 }

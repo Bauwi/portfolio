@@ -11,8 +11,7 @@ export class Header extends Component {
       1,
       this.props.location.pathname.length
     );
-    const headerLocationClassname = `header__location header__location--${cleanLocation}`;
-    console.log(cleanLocation);
+    const homeClassName = cleanLocation ? "" : "nav-active";
     const headerClassName = cleanLocation
       ? "header"
       : "header animated-sidebar";
@@ -20,28 +19,28 @@ export class Header extends Component {
       <header className={headerClassName}>
         <div className="header__main">
           <nav className="header__navigation">
-            <NavLink to="/" activeClassName="nav-activ color-blue">
+            <NavLink to="/" activeClassName={homeClassName}>
               <Icon type="home" />
             </NavLink>
-            <NavLink to="/resume" activeClassName="nav-activ color-green">
+            <NavLink to="/resume" activeClassName="nav-activ">
               <Icon type="profile" />
             </NavLink>
-            <NavLink to="/portfolio" activeClassName="nav-activ color-pink">
+            <NavLink to="/portfolio" activeClassName="nav-activ">
               <Icon type="folder-open" />
             </NavLink>
-            <NavLink to="/skills" activeClassName="nav-activ color-red">
+            <NavLink to="/skills" activeClassName="nav-activ">
               <Icon type="tool" />
             </NavLink>
-            <NavLink to="/more" activeClassName="nav-activ color-lemon">
+            <NavLink to="/more" activeClassName="nav-activ">
               <Icon type="bulb" />
             </NavLink>
             {this.props.isAuthenticated && (
-              <NavLink to="/dashboard" activeClassName="nav-activ color-blue">
+              <NavLink to="/dashboard" activeClassName="nav-activ">
                 <Icon type="dashboard" />
               </NavLink>
             )}
           </nav>
-          <header className={headerLocationClassname}>
+          <header className="header__location">
             <p>{capitalize(this.props.history.location.pathname)}</p>
           </header>
           <nav className="header__footer">

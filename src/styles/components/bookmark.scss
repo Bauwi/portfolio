@@ -13,34 +13,16 @@
   // background: red;
   padding: 1rem 1rem;
   z-index: 99;
+  border-color: $yellow;
+  &:hover {
+    color: $yellow;
+  }
 
   transition: all ease 0.5s;
 
   &:hover {
     cursor: pointer;
     transition: all ease 0.5s;
-  }
-}
-
-.bookmark--resume {
-  border-color: $green;
-  &:hover {
-    color: $green;
-  }
-}
-
-.bookmark--portfolio {
-  position: absolute;
-  border-color: $pink;
-  &:hover {
-    color: $pink;
-  }
-}
-
-.bookmark--front-skills {
-  border-color: $red;
-  &:hover {
-    color: $red;
   }
 }
 

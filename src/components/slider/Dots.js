@@ -19,7 +19,7 @@ export default class Dots extends Component {
     this.props.dots.map((child, i) => {
       const className =
         child.props.name === this.props.currentSlide
-          ? `dotstyle-drawcircle--${this.props.color} current`
+          ? `dotstyle-drawcircle--yellow current`
           : "";
 
       return (

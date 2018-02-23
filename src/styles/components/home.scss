@@ -1,91 +1,26 @@
 @import "./../base/settings.scss";
 
 .home {
-  background: rgba(50, 50, 50, 1);
-  // border: 1px solid $blue;
   display: flex;
   flex-grow: 1;
   align-items: center;
   height: 100vh;
 
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-  animation-name: show-background;
-  animation-duration: 0.5s;
-  animation-delay: 32s;
-}
-
-.infos__container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50%;
-  // overflow: hidden;
-  height: 100vh;
-  flex-grow: 1;
-}
-.infos {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-  padding-left: 15vw;
-  svg {
-    z-index: 3;
-    overflow: visible;
-    // background: #222;
-    height: 60%;
+  svg:nth-child(2) {
     width: 100%;
   }
 }
 
 // Face animation
-.face {
-  align-items: center;
-  display: flex;
-  flex-grow: 0.5;
-  height: 100vh;
-  // width: 100%;
-  transform: translate(33vw, 0vh);
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
-  animation-name: scale-and-move;
-  animation-duration: 2s;
-  animation-delay: 6s;
-  svg {
-    opacity: 1;
-    width: 100%;
-    height: 80%;
-    overflow: visible;
-    #background > g > rect  {
-      fill: transparent;
-      stroke: $blue;
-    }
-    #Visage {
-      display: none;
-    }
-  }
-}
 
 #Cheveux,
-#OreilleGauche,
-#OreilleDroite,
-#FondOeilGauche,
-#FondOeilDroit,
-#LevreHaut,
-#LevreBas,
-.NezCote,
-#NarineDroite,
-#NarineGauche,
-#DessousNez,
-#SourcilGauche,
-#SourcilDroit,
-#PaupiereGauche,
-#PaupiereDroite,
 #Reflet,
 #OmbreOeilGauche,
 #OmbreOeilDroit,
+#NarineGauche,
+#NarineDroite,
+#NarineGaucheSide,
+#NarineDroiteSide,
 #Cou > path {
   stroke-dasharray: 3500;
   stroke-dashoffset: 3500;
@@ -95,63 +30,197 @@
   animation-name: draw, coloring;
 }
 
+#FondOeilGauche,
+#FondOeilDroite {
+  stroke-dasharray: 3500;
+  stroke-dashoffset: 3500;
+  fill-opacity: 0;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-name: draw, coloring;
+}
+
+// Hair
+#Cheveux > path {
+  stroke: #333;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-name: cheveux-tube-on;
+  animation-duration: 1s;
+  animation-delay: 8.5s;
+}
+
 #Cheveux {
   animation-duration: 1.5s, 1s;
-  animation-delay: 1s, 5s;
+  animation-delay: 3s, 7s;
 }
 
+// Ears
 #OreilleGauche {
+  stroke: #333;
+  stroke-dasharray: 3500;
+  stroke-dashoffset: 3500;
+  fill-opacity: 0;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-name: draw, cheveux-tube-on;
   animation-duration: 1s, 1s;
-  animation-delay: 1.5s, 5s;
-}
-#OreilleDroite {
-  animation-duration: 1s, 1s;
-  animation-delay: 2s, 5s;
-}
-#FondOeilGauche,
-#FondOeilDroit {
-  animation-duration: 1s, 1s;
-  animation-delay: 2.5s, 5s;
+  animation-delay: 3.5s, 8.8s;
 }
 
+#OreilleDroite {
+  stroke: #333;
+  stroke-dasharray: 3500;
+  stroke-dashoffset: 3500;
+  fill-opacity: 0;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-name: draw, cheveux-tube-on;
+  animation-duration: 1s, 1s;
+  animation-delay: 4s, 9s;
+}
+
+// Eyes
+#FondOeilGauche,
+#FondOeilDroite {
+  stroke: #333;
+  stroke-dasharray: 3500;
+  stroke-dashoffset: 3500;
+  fill-opacity: 0;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-name: draw, eyes-tube-on;
+  animation-duration: 1s, 1s;
+}
+#FondOeilGauche {
+  animation-delay: 4.5s, 9.4s;
+}
+#FondOeilDroite {
+  animation-delay: 4.5s, 9.2s;
+}
+
+// Mouth
 #LevreHaut,
 #LevreBas {
+  stroke: #333;
+  stroke-dasharray: 3500;
+  stroke-dashoffset: 3500;
+  fill-opacity: 0;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-name: draw, eyes-tube-on;
   animation-duration: 1s, 1s;
-  animation-delay: 3s, 3s;
+  animation-delay: 5s, 9.7s;
 }
 
-.NezCote {
-  animation-duration: 1s, 1s;
-  animation-delay: 3.5s, 3.5s;
-}
+// Nose
 #NarineDroite,
+#NarineDroiteSide,
 #NarineGauche,
-#DessousNez {
+#NarineGaucheSide {
   animation-duration: 1s, 1s;
-  animation-delay: 3.5s, 5s;
+  animation-delay: 5.5s, 7s;
 }
 
-#SourcilGauche,
-#SourcilDroit {
-  animation-duration: 2s, 1s;
-  animation-delay: 4s, 5s;
+#NarineDroite > path:nth-child(1),
+#NarineDroite > path:nth-child(3),
+#NarineDroiteSide > path:nth-child(1),
+#NarineDroiteSide > path:nth-child(3),
+#NarineGauche > path:nth-child(1),
+#NarineGauche > path:nth-child(3),
+#NarineGaucheSide > path:nth-child(1),
+#NarineGaucheSide > path:nth-child(3) {
+  stroke: #333;
+  animation-duration: 1s;
+  animation-delay: 9.8s;
 }
+
+#NarineDroite > path:nth-child(1),
+#NarineDroiteSide > path:nth-child(1),
+#NarineGauche > path:nth-child(1),
+#NarineGaucheSide > path:nth-child(1) {
+  stroke: #333;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-name: eyes-tube-on;
+  animation-duration: 1s;
+  animation-delay: 9.8s;
+}
+
+.nez-ombre {
+  opacity: 0;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-name: fadein-simple;
+  animation-duration: 1s;
+  animation-delay: 6.5s;
+}
+
+// Sourcils
+#SourcilGauche,
+#SourcilDroite {
+  stroke: #333;
+  stroke-dasharray: 3500;
+  stroke-dashoffset: 3500;
+  fill-opacity: 0;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-name: draw, eyes-tube-on;
+  animation-duration: 1s, 1s;
+}
+#SourcilGauche {
+  animation-delay: 6s, 10.3s;
+}
+#SourcilDroite {
+  animation-delay: 6s, 10.3s;
+}
+
 #PaupiereGauche,
 #PaupiereDroite {
+  stroke: #333;
+  stroke-dasharray: 3500;
+  stroke-dashoffset: 3500;
+  fill-opacity: 0;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-name: draw, eyes-tube-on;
   animation-duration: 2s, 1s;
-  animation-delay: 4.5s, 5s;
+}
+#PaupiereGauche {
+  animation-delay: 6.5s, 11s;
+}
+#PaupiereDroite {
+  animation-delay: 6.5s, 11.5s;
 }
 
-#Reflet,
+#RefletLumiere {
+  stroke: #333;
+  stroke-dasharray: 3500;
+  stroke-dashoffset: 3500;
+  fill-opacity: 0;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-name: draw, eyes-tube-on;
+  animation-duration: 1s, 1s;
+  animation-delay: 6s, 8.8s;
+}
+
 #OmbreOeilGauche,
 #OmbreOeilDroit {
   animation-duration: 2s, 1s;
-  animation-delay: 5s, 5s;
+  animation-delay: 7s, 7s;
 }
 
 #Cou > path {
-  animation-duration: 2s, 1s;
-  animation-delay: 5.5s, 6s;
+  stroke: #333;
+  stroke-dasharray: 3500;
+  stroke-dashoffset: 3500;
+  fill-opacity: 0;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-name: draw, eyes-tube-on;
+  animation-duration: 1s, 1s;
+  animation-delay: 7.5s, 8.4s;
 }
 
 @keyframes draw {
@@ -160,6 +229,85 @@
   }
   to {
     stroke-dashoffset: 0;
+  }
+}
+
+@keyframes light-on {
+  0% {
+    opacity: 1;
+  }
+  5% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  15% {
+    opacity: 0;
+  }
+  35% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes cheveux-tube-on {
+  0% {
+    stroke: #f2b632;
+  }
+  5% {
+    stroke: #333;
+  }
+  10% {
+    stroke: #f2b632;
+  }
+  15% {
+    stroke: #333;
+  }
+  35% {
+    stroke: #f2b632;
+  }
+  60% {
+    stroke: #333;
+  }
+  70% {
+    stroke: #f2b632;
+  }
+  100% {
+    stroke: #f2b632;
+  }
+}
+@keyframes eyes-tube-on {
+  0% {
+    stroke: #f2b632;
+  }
+  5% {
+    stroke: #333;
+  }
+  10% {
+    stroke: #f2b632;
+  }
+  15% {
+    stroke: #333;
+  }
+  35% {
+    stroke: #f2b632;
+  }
+  60% {
+    stroke: #333;
+  }
+  70% {
+    stroke: #f2b632;
+  }
+  100% {
+    stroke: #f2b632;
   }
 }
 
@@ -198,15 +346,15 @@
   animation-fill-mode: forwards;
   animation-name: show-sidebar;
   animation-duration: 0.5s;
-  animation-delay: 22.5s;
-  div {
-    opacity: 0;
-    animation-timing-function: ease-out;
-    animation-fill-mode: forwards;
-    animation-name: show-sidebar-content;
-    animation-duration: 0.5s;
-    animation-delay: 22.5.5s;
-  }
+  animation-delay: 17.5s;
+  // div {
+  //   opacity: 0;
+  //   animation-timing-function: ease-out;
+  //   animation-fill-mode: forwards;
+  //   animation-name: show-sidebar-content;
+  //   animation-duration: 0.5s;
+  //   animation-delay: 18s;
+  // }
 }
 
 // Arrow animation
@@ -235,280 +383,6 @@
 }
 
 //text animation
-
-#Hi {
-  opacity: 0;
-  transform: translate(-100vw, -170vh);
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
-  animation-name: fadein-scale, backmove;
-  animation-duration: 1s, 0.5s;
-  animation-delay: 7s, 9s;
-}
-
-#I_am_Kevin {
-  opacity: 0;
-  transform: translate(-300vw, -60vh);
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
-  animation-name: fadein-scale, backmove;
-  animation-duration: 1s, 0.5s;
-  animation-delay: 9.5s, 11.5s;
-}
-
-#Front-End_Developper {
-  text:nth-child(3),
-  text:nth-child(4) {
-    opacity: 0;
-    transform: translate(-300vw, 0vh);
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
-    animation-name: fadein-scale, fadeout;
-    animation-duration: 1s, 0.5s;
-    animation-delay: 12s, 20s;
-  }
-  text:nth-child(1),
-  text:nth-child(2) {
-    opacity: 0;
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
-    animation-name: fadein-simple;
-    animation-duration: 2s;
-    animation-delay: 20.5s;
-  }
-}
-
-#technos {
-  text:nth-child(1),
-  text:nth-child(2),
-  text:nth-child(3),
-  text:nth-child(4),
-  text:nth-child(5) {
-    opacity: 0;
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
-    animation-name: fadein-simple;
-    animation-duration: 2s;
-    animation-delay: 21s;
-  }
-  text:nth-child(6),
-  text:nth-child(7) {
-    opacity: 0;
-    transform: translate(-300vw, 50vh);
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
-    animation-name: fadein-scale, fadeout;
-    animation-duration: 1s, 0.5s;
-    animation-delay: 14s, 20s;
-  }
-
-  text:nth-child(8),
-  text:nth-child(9),
-  text:nth-child(10),
-  text:nth-child(11),
-  text:nth-child(12),
-  text:nth-child(13),
-  text:nth-child(14),
-  text:nth-child(15),
-  text:nth-child(16),
-  text:nth-child(17) {
-    opacity: 0;
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
-    animation-name: fadein-simple, fadeout;
-    animation-duration: 1s, 0.5s;
-  }
-
-  text:nth-child(8),
-  text:nth-child(9) {
-    transform: translate(-300vw, 150vh);
-    animation-delay: 15.5s, 20s;
-  }
-  text:nth-child(10),
-  text:nth-child(11) {
-    transform: translate(-220vw, 150vh);
-    animation-delay: 16s, 20s;
-  }
-  text:nth-child(12),
-  text:nth-child(13) {
-    transform: translate(-140vw, 150vh);
-    animation-delay: 16.5s, 20s;
-  }
-  text:nth-child(14),
-  text:nth-child(15) {
-    transform: translate(-300vw, 200vh);
-    animation-delay: 17s, 20s;
-  }
-  text:nth-child(16),
-  text:nth-child(17) {
-    transform: translate(-180vw, 200vh);
-    animation-delay: 17.5s, 20s;
-  }
-}
-
-#portfolio {
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
-  animation-name: backmove;
-  animation-duration: 0.3s;
-  animation-delay: 16.5s;
-
-  text:nth-child(1),
-  text:nth-child(2) {
-    opacity: 0;
-    transform: translate(-250vw, 0vh);
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
-    animation-name: fadein-scale, fadeout;
-    animation-duration: 1s, 0.5s;
-    animation-delay: 23s, 25s;
-  }
-
-  text:nth-child(4),
-  text:nth-child(5) {
-    opacity: 0;
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
-    animation-name: fadein-simple;
-    animation-duration: 2s;
-    animation-delay: 25s;
-  }
-  text:nth-child(3) {
-    opacity: 0;
-    stroke-dasharray: 3500;
-    stroke-dashoffset: 3500;
-    fill-opacity: 0;
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
-    animation-name: fadein-simple, draw;
-    animation-duration: 2s, 2s;
-    animation-delay: 25s, 33s;
-  }
-
-  &:hover {
-    cursor: pointer;
-    text:nth-child(4) {
-      stroke: $pink;
-    }
-  }
-}
-
-#skills {
-  text:nth-child(1),
-  text:nth-child(2) {
-    opacity: 0;
-    transform: translate(-250vw, 0vh);
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
-    animation-name: fadein-scale, fadeout;
-    animation-duration: 1s, 0.5s;
-    animation-delay: 26s, 28s;
-  }
-  text:nth-child(4),
-  text:nth-child(5) {
-    opacity: 0;
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
-    animation-name: fadein-simple;
-    animation-duration: 2s;
-    animation-delay: 28s;
-  }
-
-  text:nth-child(3) {
-    opacity: 0;
-    stroke-dasharray: 3500;
-    stroke-dashoffset: 3500;
-    fill-opacity: 0;
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
-    animation-name: fadein-simple, draw;
-    animation-duration: 2s, 2s;
-    animation-delay: 28s, 33.3s;
-  }
-
-  &:hover {
-    cursor: pointer;
-    text:nth-child(4) {
-      stroke: $red;
-    }
-  }
-}
-
-#contact {
-  text:nth-child(1),
-  text:nth-child(2) {
-    opacity: 0;
-    transform: translate(-500vw, 0vh);
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
-    animation-name: fadein-scale, fadeout;
-    animation-duration: 1s, 0.5s;
-    animation-delay: 29s, 31s;
-  }
-  text:nth-child(4),
-  text:nth-child(5) {
-    opacity: 0;
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
-    animation-name: fadein-simple;
-    animation-duration: 2s;
-    animation-delay: 31s;
-  }
-
-  text:nth-child(3) {
-    opacity: 0;
-    stroke-dasharray: 3500;
-    stroke-dashoffset: 3500;
-    fill-opacity: 0;
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
-    animation-name: fadein-simple, draw;
-    animation-duration: 2s, 2s;
-    animation-delay: 31s, 33.6s;
-  }
-  &:hover {
-    cursor: pointer;
-    text:nth-child(4) {
-      stroke: $orange;
-    }
-  }
-}
-
-@keyframes fadein-simple {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadein-scale {
-  from {
-    opacity: 0;
-    transform: scale(2);
-    transform-origin: 50% 50%;
-  }
-  to {
-    opacity: 1;
-    transform-origin: 50% 50%;
-  }
-}
-
-@keyframes fadeout {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-@keyframes backmove {
-  to {
-    transform: translate(0px, 0px);
-  }
-}
 
 // Sidebar Keyframes
 @keyframes show-sidebar {
@@ -546,18 +420,194 @@
     transform: translate(0px, calc(100vh - 110px)) rotate(-90deg);
   }
 }
+//Strips
+#bande-bas {
+  transform: translate(-1440px, 272px);
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-name: strip-appear-left;
+  animation-duration: 1s;
+  animation-delay: 13s;
+}
+#bande-haut {
+  transform: translate(1440px, -272px);
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-name: strip-appear-right;
+  animation-duration: 1s;
+  animation-delay: 13s;
+}
+#bande-noire-middle {
+  transform: translate(-272px, -1440px);
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-name: strip-appear-top;
+  animation-duration: 1s;
+  animation-delay: 13s;
+}
+#bande-grise-large {
+  transform: translate(272px, 1440px);
 
-@keyframes backmove-portfolio {
-  to {
-    transform: translate(1364.24px, 3027.96px);
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-name: strip-appear-bottom;
+  animation-duration: 1s;
+  animation-delay: 13s;
+}
+#bande-etroite-grise {
+  transform: translate(-272px, -1440px);
+
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-name: strip-appear-top;
+  animation-duration: 1s;
+  animation-delay: 13s;
+}
+#bande-noire-left {
+  transform: translate(-272px, -1440px);
+
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-name: strip-appear-top;
+  animation-duration: 1s;
+  animation-delay: 13s;
+}
+
+// TExt
+
+#phil {
+  stroke: black;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-name: black-to-blue;
+  animation-duration: 0.5s;
+  animation-delay: 14s;
+}
+#ippe {
+  stroke: black;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-name: black-to-yellow;
+  animation-duration: 1s;
+  animation-delay: 14s;
+}
+
+#portfolio,
+#skills,
+#contact {
+  stroke: transparent;
+  stroke-width: 5;
+  &:hover {
+    fill: #f2b632;
+    cursor: pointer;
+  }
+}
+#portfolio {
+  opacity: 0;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-name: fade-in;
+  animation-duration: 1s;
+  animation-delay: 15s;
+}
+#skills {
+  opacity: 0;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-name: fade-in;
+  animation-duration: 0.5s;
+  animation-delay: 16s;
+}
+#contact {
+  opacity: 0;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-name: fade-in;
+  animation-duration: 0.5s;
+  animation-delay: 17s;
+}
+
+#front-end {
+  @for $i from 1 through 38 {
+    .delay-front-#{$i} {
+      animation-delay: calc(0.2s + (0.1s * #{$i}));
+    }
+    path {
+      animation: front-end-appears 0.5s ease-in forwards;
+      opacity: 0;
+    }
   }
 }
 
-@keyframes show-background {
+@keyframes strip-appear-left {
   from {
-    background: rgba(50, 50, 50, 1);
+    transform: translate(-1440px, 272px);
   }
   to {
-    background: rgba(70, 70, 70, 1);
+    transform: translate(0, 0);
+  }
+}
+@keyframes strip-appear-right {
+  from {
+    transform: translate(1440px, -272px);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+@keyframes strip-appear-top {
+  from {
+    transform: translate(-272px, -1440px);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+@keyframes strip-appear-bottom {
+  from {
+    transform: translate(272px, 1440px);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes black-to-blue {
+  from {
+    stroke: black;
+  }
+  to {
+    stroke: #252839;
+  }
+}
+
+@keyframes black-to-yellow {
+  from {
+    stroke: black;
+  }
+  to {
+    stroke: #f2b632;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opatcity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes front-end-appears {
+  from {
+    opacity: 0;
+    transform: scale(6);
+    transform-origin: 50% 50%;
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    transform-origin: 50% 50%;
   }
 }

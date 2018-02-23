@@ -5,14 +5,6 @@
   max-height: 100vh;
 }
 
-.element {
-  > div:nth-child(even) {
-    background: rgba(255, 255, 255, 0.075);
-  }
-  > div:nth-child(odd) {
-    background: rgba(255, 255, 255, 0.1);
-  }
-}
 .slider-nav {
   border-top: none;
   color: $off-white;
@@ -43,14 +35,7 @@
 .slider-nav--navlink--active {
   color: rgba(255, 255, 255, 0.8);
   transition: all ease, 0.5s;
-}
-
-.border-red {
-  border-bottom: 1px solid $red;
-  transition: all ease, 0.5s;
-}
-.border-green {
-  border-bottom: 1px solid $green;
+  border-bottom: 1px solid $yellow;
   transition: all ease, 0.5s;
 }
 
@@ -138,12 +123,8 @@
   z-index: 10;
 }
 
-.dotstyle-drawcircle--green svg circle {
-  stroke: $green;
-}
-
-.dotstyle-drawcircle--red svg circle {
-  stroke: $red;
+.dotstyle-drawcircle--yellow svg circle {
+  stroke: $yellow;
 }
 
 .dotstyle-drawcircle svg circle {

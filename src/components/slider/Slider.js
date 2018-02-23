@@ -103,9 +103,7 @@ export default class Slider extends Component {
             {React.Children.map(this.props.children, (child, i) => {
               const navClassname =
                 child.props.name === this.state.current
-                  ? `slider-nav--navlink slider-nav--navlink--active border-${
-                      this.props.color
-                    }`
+                  ? `slider-nav--navlink slider-nav--navlink--active`
                   : `slider-nav--navlink`;
               return (
                 <div

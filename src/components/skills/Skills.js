@@ -37,10 +37,7 @@ export default class Skills extends Component {
   render() {
     return (
       <div>
-        <div
-          className="bookmark bookmark--front-skills"
-          onClick={this.showModal}
-        >
+        <div className="bookmark" onClick={this.showModal}>
           <Icon type="fork" />
         </div>
         <Trees

@@ -20,7 +20,7 @@ export default class Resume extends React.Component {
   render() {
     return (
       <div>
-        <div className="bookmark bookmark--resume" onClick={this.downloadPDF}>
+        <div className="bookmark" onClick={this.downloadPDF}>
           <Icon type="file-pdf" />
         </div>
         <Slider numofslides={4} name="resumeSlider" color="green">

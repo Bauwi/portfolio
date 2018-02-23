@@ -55,10 +55,7 @@ export class Filters extends Component {
       : "portfolio__filters__panel portfolio__filters__panel--hidden";
     return (
       <div className="portfolio__filters">
-        <div
-          className="bookmark bookmark--portfolio"
-          onClick={this.showFilters}
-        >
+        <div className="bookmark" onClick={this.showFilters}>
           <Icon type="filter" />
         </div>
 
