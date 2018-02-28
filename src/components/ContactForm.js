@@ -4,8 +4,24 @@ import { connect } from "react-redux";
 import { withFormik } from "formik";
 import Yup from "yup";
 import classnames from "classnames";
+import axios from "axios";
+import { notification } from "antd";
 
 import { startLogin } from "./../actions/auth";
+
+const openNotificationWithIcon = type => {
+  if (type === "success")
+    notification.success({
+      message: "Message sent !",
+      description: "Thank you ! I will get back to you as quickly as possible."
+    });
+  else if (type === "error") {
+    notification.error({
+      message: "Oops, something went wrong.",
+      description: "Please try again or use my e-mail address directly."
+    });
+  }
+};
 
 const formikEnhancer = withFormik({
   validationSchema: Yup.object().shape({
@@ -26,11 +42,27 @@ const formikEnhancer = withFormik({
     ...user
   }),
   handleSubmit: (payload, formikBag) => {
-    formikBag.props.startLogin({
-      email: payload.email,
-      password: payload.password
-    });
-    formikBag.setSubmitting(false);
+    const html = `
+      <div>
+        <h1>${payload.name}</h1>
+        <p>new message from: ${payload.email}</p>
+        <p>${payload.body}</p>
+      </div>
+    `;
+    const content = {
+      to: "kvn.philippe@gmail.com",
+      from: payload.email,
+      subject: payload.name,
+      text: payload.body,
+      html
+    };
+    axios
+      .post("http://localhost:3001/send-email", content)
+      .then(() => {
+        openNotificationWithIcon("success");
+        formikBag.setSubmitting(false);
+      })
+      .catch(error => openNotificationWithIcon("error"));
   },
   displayName: "MyForm"
 });
@@ -151,12 +183,11 @@ export const MyForm = props => {
         onBlur={handleBlur}
       />
       <TextArea
-        name=""
-        id=""
+        name="body"
         cols="30"
         rows="5"
         id="body"
-        type="body"
+        type="text"
         label="Your Message"
         placeholder="ex: drwho@universe.com"
         error={touched.body && errors.body}

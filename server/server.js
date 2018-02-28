@@ -3,6 +3,7 @@ require("./config/config.js");
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
+const nodeMailer = require("nodemailer");
 const _ = require("lodash");
 const bodyParser = require("body-parser");
 const { ObjectID } = require("mongodb");
@@ -12,7 +13,7 @@ const { mongoose } = require("./db/mongoose");
 const { Project } = require("./models/project");
 const { User } = require("./models/user");
 const { authenticate } = require("./middleware/authenticate");
-
+const { mailCredentials } = require("./mail/MAIL_CREDENTIALS");
 const publicPath = path.join(__dirname, "../public");
 
 const app = express();
@@ -29,6 +30,8 @@ app.use(
     limit: "5mb"
   })
 );
+console.log(mailCredentials);
+
 app.use(express.static(publicPath));
 
 /* ************************************************************* */
@@ -61,6 +64,34 @@ if (!process.env.NODE_ENV && port !== 3001) {
     next();
   });
 }
+
+/* ************************************************************* */
+/* NodeMailer                                                    */
+/* ************************************************************* */
+app.post("/send-email", (req, res) => {
+  const transporter = nodeMailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: mailCredentials.user,
+      pass: mailCredentials.pass
+    }
+  });
+  const mailOptions = {
+    from: req.body.from,
+    to: req.body.to,
+    subject: req.body.subject,
+    text: req.body.body,
+    html: req.body.html
+  };
+
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      return console.log(error);
+    }
+    console.log("Message %s sent: %s", info.messageId, info.response);
+    res.status(200).send();
+  });
+});
 
 /* ************************************************************* */
 /* Route for handling resume download                            */
