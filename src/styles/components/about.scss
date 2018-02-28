@@ -1,0 +1,134 @@
+@import "./../base/settings.scss";
+.about {
+  display: flex;
+  color: grey;
+  h2 {
+    border-bottom: 1px solid white;
+    color: white;
+    font-size: 3rem;
+    font-style: italic;
+    font-weight: 900;
+    margin: 0 0 1rem 0;
+    position: relative;
+    text-align: right;
+    z-index: 99;
+  }
+}
+.about__id {
+  width: 30%;
+}
+.about__id__face {
+  position: absolute;
+  div {
+    display: flex;
+    justify-content: center;
+    height: 40%;
+  }
+  svg {
+    height: 100vh;
+  }
+}
+.about__id__infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  text-align: right;
+  margin-right: 2rem;
+}
+
+.about__id__infos__top {
+  margin: 5rem 0;
+
+  p {
+    font-style: italic;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+    position: relative;
+    z-index: 99;
+  }
+  p:nth-child(2) {
+    margin-bottom: 2rem;
+  }
+  p:first-child {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 2rem;
+  }
+}
+.about__legend {
+  width: 100%;
+
+  img {
+    position: relative;
+    margin: 1rem 1rem;
+    z-index: 99;
+  }
+  p {
+    position: relative;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 1rem 1rem;
+    z-index: 99;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+.about__mobility {
+  height: 100vh;
+  width: 70%;
+  opacity: 0.7;
+}
+
+// Remove unecessary in map
+
+.gm-style {
+  a > div > img,
+  button {
+    display: none;
+  }
+}
+
+.gmnoprint {
+  display: none;
+}
+
+@include for-phone-only {
+  .about {
+    flex-direction: column-reverse;
+    h2 {
+      font-size: 2rem;
+    }
+  }
+  .about__id {
+    width: 100%;
+    height: 50vh;
+  }
+  .about__id__infos {
+    height: 50vh;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    padding: 1rem 0;
+  }
+  .about__id__face {
+    div {
+      display: flex;
+      justify-content: center;
+      height: 40%;
+    }
+    svg {
+      height: 50vh;
+    }
+  }
+  .about__id__infos__top {
+    margin: 0;
+  }
+  .about__mobility {
+    width: 100%;
+  }
+}

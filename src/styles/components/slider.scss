@@ -24,7 +24,7 @@
 
 .slider-nav--navlink {
   border-bottom: 1px solid rgba(0, 0, 0, 0);
-  color: rgba(255, 255, 255, 0.2);
+  color: #a3a3a3;
   margin: 0 1rem;
   transition: all ease, 0.5s;
   &:hover {
@@ -33,9 +33,9 @@
 }
 
 .slider-nav--navlink--active {
-  color: rgba(255, 255, 255, 0.8);
+  color: #22264b;
   transition: all ease, 0.5s;
-  border-bottom: 1px solid $yellow;
+  border-bottom: 1px solid #22264b;
   transition: all ease, 0.5s;
 }
 
@@ -124,11 +124,11 @@
 }
 
 .dotstyle-drawcircle--yellow svg circle {
-  stroke: $yellow;
+  stroke: #89bdd3;
 }
 
 .dotstyle-drawcircle svg circle {
-  fill: rgba(255, 255, 255, 0.11);
+  fill: #c9c9c9;
   stroke-width: 3;
   stroke-linecap: round;
   stroke-linejoin: round;

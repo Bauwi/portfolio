@@ -151,9 +151,9 @@
   opacity: 0;
   animation-timing-function: ease;
   animation-fill-mode: forwards;
-  animation-name: fadein-simple;
+  animation-name: fade-in;
   animation-duration: 1s;
-  animation-delay: 6.5s;
+  animation-delay: 9.5s;
 }
 
 // Sourcils
@@ -260,54 +260,54 @@
 }
 @keyframes cheveux-tube-on {
   0% {
-    stroke: #f2b632;
+    stroke: #22264b;
   }
   5% {
     stroke: #333;
   }
   10% {
-    stroke: #f2b632;
+    stroke: #22264b;
   }
   15% {
     stroke: #333;
   }
   35% {
-    stroke: #f2b632;
+    stroke: #22264b;
   }
   60% {
     stroke: #333;
   }
   70% {
-    stroke: #f2b632;
+    stroke: #22264b;
   }
   100% {
-    stroke: #f2b632;
+    stroke: #22264b;
   }
 }
 @keyframes eyes-tube-on {
   0% {
-    stroke: #f2b632;
+    stroke: #22264b;
   }
   5% {
     stroke: #333;
   }
   10% {
-    stroke: #f2b632;
+    stroke: #22264b;
   }
   15% {
     stroke: #333;
   }
   35% {
-    stroke: #f2b632;
+    stroke: #22264b;
   }
   60% {
     stroke: #333;
   }
   70% {
-    stroke: #f2b632;
+    stroke: #22264b;
   }
   100% {
-    stroke: #f2b632;
+    stroke: #22264b;
   }
 }
 
@@ -475,23 +475,6 @@
 
 // TExt
 
-#phil {
-  stroke: black;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-  animation-name: black-to-blue;
-  animation-duration: 0.5s;
-  animation-delay: 14s;
-}
-#ippe {
-  stroke: black;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-  animation-name: black-to-yellow;
-  animation-duration: 1s;
-  animation-delay: 14s;
-}
-
 #portfolio,
 #skills,
 #contact {
@@ -583,10 +566,10 @@
 
 @keyframes black-to-yellow {
   from {
-    stroke: black;
+    stroke: #111;
   }
   to {
-    stroke: #f2b632;
+    stroke: #252839;
   }
 }
 

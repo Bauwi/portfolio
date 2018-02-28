@@ -13,6 +13,8 @@ import Portfolio from "../components/portfolio/Portfolio";
 import Skills from "../components/skills/Skills";
 import LoginPage from "../components/LoginPage";
 import Dashboard from "../components/dashboard/Dashboard";
+import About from "./../components/about/About";
+import Contact from "./../components/Contact";
 import NotFound from "../components/NotFound";
 
 import Header from "../components/Header";
@@ -56,6 +58,8 @@ export class AppRouter extends Component {
                 <Route exact path="/skills" component={Skills} />
                 <Route exact path="/login" component={LoginPage} />
                 <Route exact path="/dashboard" component={Dashboard} />
+                <Route exact path="/about" component={About} />
+                <Route exact path="/contact" component={Contact} />
 
                 <Route component={NotFound} />
               </AnimatedSwitch>

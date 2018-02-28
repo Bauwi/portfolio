@@ -44,10 +44,13 @@ export class Header extends Component {
             <p>{capitalize(this.props.history.location.pathname)}</p>
           </header>
           <nav className="header__footer">
-            <NavLink to="/contact" activeClassName="nav-activ color-blue">
+            <NavLink to="/about" activeClassName="nav-activ">
+              <Icon type="user" />
+            </NavLink>
+            <NavLink to="/contact" activeClassName="nav-activ">
               <Icon type="mail" />
             </NavLink>
-            <NavLink to="/github" activeClassName="nav-activ color-blue">
+            <NavLink to="/github" activeClassName="nav-activ">
               <Icon type="github" />
             </NavLink>
           </nav>

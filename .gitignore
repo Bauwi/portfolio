@@ -24,3 +24,5 @@ yarn-error.log*
 src/**/*.css
 
 server/config/config.json
+
+MAIL_CREDENTIALS.js
