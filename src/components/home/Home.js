@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 
-import Infos from "./Infos";
-
 export default class Home extends Component {
   render() {
     return (

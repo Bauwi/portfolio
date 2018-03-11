@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { CSSTransitionGroup } from "react-transition-group";
 
 import Transition from "../Transition";
 import StyledWrapper from "../StyledWrapper";

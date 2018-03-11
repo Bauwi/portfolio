@@ -1,13 +1,7 @@
 import React, { Component } from "react";
 import { compose, withProps } from "recompose";
-import {
-  withScriptjs,
-  withGoogleMap,
-  GoogleMap,
-  Marker
-} from "react-google-maps";
+import { withScriptjs, withGoogleMap, GoogleMap } from "react-google-maps";
 import { MarkerWithLabel } from "react-google-maps/lib/components/addons/MarkerWithLabel";
-import { Icon } from "antd";
 import mapStyle from "../../utils/mapStyle.json";
 
 const labelStyle = {
@@ -67,37 +61,39 @@ export class MapComponent extends Component {
 
   render() {
     return (
-      <GoogleMap
-        defaultZoom={5}
-        defaultCenter={{ lat: 48.866667, lng: 2.333333 }}
-        defaultOptions={{ styles: mapStyle }}
-      >
-        <MarkerWithLabel
-          position={{ lat: 48.866667, lng: 2.333333 }}
-          icon="marker-now.png"
-          labelAnchor={{ x: "-10", y: "20" }}
-          labelStyle={{
-            backgroundColor: "white",
-            border: "2px solid #fc6877",
-            fontSize: "12px",
-            padding: "3px"
-          }}
+      <div>
+        <GoogleMap
+          defaultZoom={5}
+          defaultCenter={{ lat: 48.866667, lng: 2.333333 }}
+          defaultOptions={{ styles: mapStyle }}
         >
-          <div>Paris</div>
-        </MarkerWithLabel>
-        {cities.map(city => {
-          return (
-            <MarkerWithLabel
-              position={{ lat: city.lat, lng: city.lng }}
-              icon="marker.png"
-              labelAnchor={{ x: "-10", y: "20" }}
-              labelStyle={labelStyle}
-            >
-              <div>{city.name}</div>
-            </MarkerWithLabel>
-          );
-        })}
-      </GoogleMap>
+          <MarkerWithLabel
+            position={{ lat: 48.866667, lng: 2.333333 }}
+            icon="marker-now.png"
+            labelAnchor={{ x: "-10", y: "20" }}
+            labelStyle={{
+              backgroundColor: "white",
+              border: "2px solid #fc6877",
+              fontSize: "12px",
+              padding: "3px"
+            }}
+          >
+            <div>Paris</div>
+          </MarkerWithLabel>
+          {cities.map(city => {
+            return (
+              <MarkerWithLabel
+                position={{ lat: city.lat, lng: city.lng }}
+                icon="marker.png"
+                labelAnchor={{ x: "-10", y: "20" }}
+                labelStyle={labelStyle}
+              >
+                <div>{city.name}</div>
+              </MarkerWithLabel>
+            );
+          })}
+        </GoogleMap>
+      </div>
     );
   }
 }

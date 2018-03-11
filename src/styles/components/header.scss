@@ -6,13 +6,15 @@
   font-size: $font-size-large;
   min-height: $header-height;
   margin: 0;
+  width: 10rem;
+
   h1 {
     color: $off-white !important;
   }
   & > div {
     display: flex;
     flex-direction: column;
-    height: 120px;
+    // height: 120px;
     width: 6rem;
     // justify-content: center;
     nav {
@@ -23,19 +25,31 @@
       a {
         color: #677077;
 
-        font-size: 2.5rem;
+        font-size: 3rem;
         text-align: center;
         text-decoration: none;
+      }
+      a:hover::after {
+        color: black;
+        position: absolute;
+        font-size: 2rem;
+        content: attr(menu);
+        margin: 1vh 0 0 1rem;
       }
     }
   }
 }
 
 .header__main {
+  margin-top: 5vh;
+  position: absolute;
+  height: 90vh;
   display: flex;
   justify-content: space-between;
+  transform: rotateY(0deg);
 
-  min-height: 100vh;
+  transition: transform 2s ease;
+  z-index: 99;
 }
 
 .header__name {
@@ -77,4 +91,14 @@
 .nav-activ {
   color: #89bdd3 !important;
   transition: all ease 1s;
+}
+
+.header--contact {
+  perspective: 200vw;
+  perspective-origin: 50vw 100vh;
+}
+.header__main--contact {
+  transform: rotateY(-40deg);
+  transition: transform 0.1s ease;
+  transition-delay: 3.5s;
 }

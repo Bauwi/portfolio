@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import Dots from "./Dots";
 
-import { Link, Element, scroller, scrollSpy, Events } from "react-scroll";
+import { Element, scroller } from "react-scroll";
 
 export default class Slider extends Component {
   state = {

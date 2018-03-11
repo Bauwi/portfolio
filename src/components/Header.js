@@ -12,26 +12,29 @@ export class Header extends Component {
       this.props.location.pathname.length
     );
     const homeClassName = cleanLocation ? "" : "nav-active";
-    const headerClassName = cleanLocation
-      ? "header"
-      : "header animated-sidebar";
+    const headerClassName = `header header--${cleanLocation}`;
+    const headerMainClassName = `header__main header__main--${cleanLocation}`;
     return (
       <header className={headerClassName}>
-        <div className="header__main">
+        <div className={headerMainClassName}>
           <nav className="header__navigation">
-            <NavLink to="/" activeClassName={homeClassName}>
+            <NavLink to="/" activeClassName={homeClassName} menu="HOME">
               <Icon type="home" />
             </NavLink>
-            <NavLink to="/resume" activeClassName="nav-activ">
+            <NavLink to="/resume" activeClassName="nav-activ" menu="RESUME">
               <Icon type="profile" />
             </NavLink>
-            <NavLink to="/portfolio" activeClassName="nav-activ">
+            <NavLink
+              to="/portfolio"
+              activeClassName="nav-activ"
+              menu="PORTFOLIO"
+            >
               <Icon type="folder-open" />
             </NavLink>
-            <NavLink to="/skills" activeClassName="nav-activ">
+            <NavLink to="/skills" activeClassName="nav-activ" menu="SKILLS">
               <Icon type="tool" />
             </NavLink>
-            <NavLink to="/more" activeClassName="nav-activ">
+            <NavLink to="/more" activeClassName="nav-activ" menu="MORE">
               <Icon type="bulb" />
             </NavLink>
             {this.props.isAuthenticated && (
@@ -44,15 +47,20 @@ export class Header extends Component {
             <p>{capitalize(this.props.history.location.pathname)}</p>
           </header>
           <nav className="header__footer">
-            <NavLink to="/about" activeClassName="nav-activ">
+            <NavLink to="/about" activeClassName="nav-activ" menu="ABOUT">
               <Icon type="user" />
             </NavLink>
-            <NavLink to="/contact" activeClassName="nav-activ">
+            <NavLink to="/contact" activeClassName="nav-activ" menu="CONTACT">
               <Icon type="mail" />
             </NavLink>
-            <NavLink to="/github" activeClassName="nav-activ">
+            <a
+              href="https://github.com/Bauwi"
+              target="_blank"
+              rel="noopener noreferrer"
+              menu="GITHUB"
+            >
               <Icon type="github" />
-            </NavLink>
+            </a>
           </nav>
         </div>
       </header>

@@ -7,7 +7,6 @@ import AnimatedSwitch from "../components/animated_switch";
 import PrivateRoute from "./PrivateRoute";
 
 import Home from "../components/home/Home";
-import Missed from "../components/missed";
 import Resume from "../components/resume/Resume";
 import Portfolio from "../components/portfolio/Portfolio";
 import Skills from "../components/skills/Skills";
@@ -15,6 +14,7 @@ import LoginPage from "../components/LoginPage";
 import Dashboard from "../components/dashboard/Dashboard";
 import About from "./../components/about/About";
 import Contact from "./../components/Contact";
+import More from "./../components/More";
 import NotFound from "../components/NotFound";
 
 import Header from "../components/Header";
@@ -60,6 +60,7 @@ export class AppRouter extends Component {
                 <Route exact path="/dashboard" component={Dashboard} />
                 <Route exact path="/about" component={About} />
                 <Route exact path="/contact" component={Contact} />
+                <Route exact path="/more" component={More} />
 
                 <Route component={NotFound} />
               </AnimatedSwitch>

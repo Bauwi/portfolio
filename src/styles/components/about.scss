@@ -2,17 +2,6 @@
 .about {
   display: flex;
   color: grey;
-  h2 {
-    border-bottom: 1px solid white;
-    color: white;
-    font-size: 3rem;
-    font-style: italic;
-    font-weight: 900;
-    margin: 0 0 1rem 0;
-    position: relative;
-    text-align: right;
-    z-index: 99;
-  }
 }
 .about__id {
   width: 30%;
@@ -58,19 +47,28 @@
   }
 }
 .about__legend {
-  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 99;
 
   img {
+    height: 1.5rem;
+    width: 1.5rem;
     position: relative;
     margin: 1rem 1rem;
     z-index: 99;
   }
   p {
-    position: relative;
-    font-size: 2rem;
+    color: black;
+    font-size: 1.5rem;
     font-weight: 700;
     margin: 1rem 1rem;
-    z-index: 99;
   }
   div {
     display: flex;

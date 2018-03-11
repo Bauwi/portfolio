@@ -7,29 +7,33 @@
 }
 
 .ant-modal-content {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(255, 255, 255, 0.85);
   border: 1px solid $off-white;
-  color: $off-white;
+  color: $grey;
   min-height: 80vh;
+  .ant-modal-close {
+    box-shadow: none;
+    margin: 0;
+  }
   .ant-modal-close-x {
-    color: $off-white;
+    color: $grey;
   }
 }
 
 .ant-modal-header {
-  background: rgba(0, 0, 0, 0.7);
+  background: none;
   * {
-    color: $off-white;
+    color: $grey;
   }
 }
 
 .ant-modal-body {
   padding: 0;
   span {
-    color: $off-white;
+    color: $grey;
   }
   h4 {
-    color: $off-white;
+    color: $grey;
     text-align: center;
   }
 }
