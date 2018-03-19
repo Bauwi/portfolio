@@ -15,16 +15,20 @@ const animation = [
   { className: "inputs--appear", delay: 6600 }
 ];
 
-console.log(animation);
+const animationBackground = [
+  { className: "wrap__background-change", delay: 3500 }
+];
 
 export default class More extends Component {
   state = {
     cube1ClassName:
-      "cube1 cube1--initial ninja--initial ninja--enter  strip--appear cube1--translate cube1--rotate cube1--grow inputs--appear inputs--initial "
+      "cube1 cube1--initial ninja--initial ninja--enter  strip--appear cube1--translate cube1--rotate cube1--grow inputs--appear inputs--initial ",
+    wrapClassName: "wrap wrap__background-change"
   };
 
   componentDidMount() {
     this.applyTransition(animation);
+    this.applyBackgroundTransition(animationBackground);
   }
 
   applyTransition = transitions => {
@@ -41,10 +45,24 @@ export default class More extends Component {
     });
   };
 
+  applyBackgroundTransition = transitions => {
+    transitions.forEach((cur, i) => {
+      setTimeout(() => {
+        console.log(cur);
+        this.setState(prevState => ({
+          wrapClassName: prevState.wrapClassName.replace(
+            cur.className.trim(),
+            ""
+          )
+        }));
+      }, cur.delay);
+    });
+  };
+
   render() {
-    console.log(this.state.cube1ClassName);
+    console.log(this.state.wrapClassName);
     return (
-      <div className="wrap">
+      <div className={this.state.wrapClassName}>
         <div className={this.state.cube1ClassName}>
           <div className="front">
             <svg id="headband" viewBox="0 0 790.58 1415.07">

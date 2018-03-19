@@ -1,13 +1,13 @@
 @import "./../base/settings.scss";
 
 .header {
+  position: relative;
   display: flex;
   color: $off-white;
   font-size: $font-size-large;
   min-height: $header-height;
   margin: 0;
-  width: 10rem;
-
+  z-index: 100;
   h1 {
     color: $off-white !important;
   }
@@ -30,7 +30,7 @@
         text-decoration: none;
       }
       a:hover::after {
-        color: black;
+        color: grey;
         position: absolute;
         font-size: 2rem;
         content: attr(menu);
@@ -93,12 +93,14 @@
   transition: all ease 1s;
 }
 
-.header--contact {
+.header--contact,
+.header--about {
   perspective: 200vw;
   perspective-origin: 50vw 100vh;
 }
-.header__main--contact {
+.header__main--contact,
+.header__main--about {
   transform: rotateY(-40deg);
   transition: transform 0.1s ease;
-  transition-delay: 3.5s;
+  transition-delay: 3s;
 }

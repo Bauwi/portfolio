@@ -36,9 +36,15 @@ export default class AnimatedSwitch extends Switch {
       transform: Animated.template`
 				translate3d(${this.state.animate.interpolate({
           inputRange: [0, 1],
-          outputRange: ["500px", "0px"]
+          outputRange: ["-2500px", "0px"]
         })},0,0)
-			`
+      `
+      // transform: Animated.template`
+      // 	rotateY(${this.state.animate.interpolate({
+      //     inputRange: [0, 1],
+      //     outputRange: ["-400deg", "0deg"]
+      //   })},0,0)
+      // `
     };
     return (
       <Animated.div style={style} className="animated-page-wrapper">

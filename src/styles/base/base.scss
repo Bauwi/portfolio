@@ -20,18 +20,15 @@ html {
 
 body {
   margin: 0;
-  background-image: linear-gradient(
-    to top,
-    #c4c5c7 0%,
-    #dcdddf 52%,
-    #ebebeb 100%
-  );
 }
 
 *,
 *:before,
 *:after {
   box-sizing: inherit;
+}
+
+#root {
 }
 
 body,
@@ -71,4 +68,5 @@ body,
   width: 100%;
   min-height: $main-height;
   overflow: hidden;
+  transform: rotate(-40deg);
 }

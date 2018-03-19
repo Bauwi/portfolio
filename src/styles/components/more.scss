@@ -1,7 +1,30 @@
 .wrap {
+  background-image: linear-gradient(
+    to right,
+    hsl(0, 0%, 0%) 0%,
+    hsla(0, 0%, 0%, 0.738) 19%,
+    hsla(0, 0%, 0%, 0.541) 34%,
+    hsla(0, 0%, 0%, 0.382) 47%,
+    hsla(0, 0%, 0%, 0.278) 56.5%,
+    hsla(0, 0%, 0%, 0.194) 65%,
+    hsla(0, 0%, 0%, 0.126) 73%,
+    hsla(0, 0%, 0%, 0.075) 80.2%,
+    hsla(0, 0%, 0%, 0.042) 86.1%,
+    hsla(0, 0%, 0%, 0.021) 91%,
+    hsla(0, 0%, 0%, 0.008) 95.2%,
+    hsla(0, 0%, 0%, 0.002) 98.2%,
+    hsla(0, 0%, 0%, 0) 100%
+  );
+  background-position: 0vw;
+  background-repeat: no-repeat;
   perspective: 200vw;
   perspective-origin: 50vw 100vh;
+  width: 100vw;
   height: 100%;
+  transition: all 0.1s ease;
+}
+.wrap__background-change {
+  background-position: -100vw;
 }
 
 .cube1 {
@@ -244,7 +267,12 @@
 // Strips
 .strip {
   opacity: 0.3;
-  background: rgba(120, 120, 120, 1);
+  background: linear-gradient(
+    to right,
+    rgba(120, 120, 120, 1) 0%,
+    rgba(120, 120, 120, 1) 75%,
+    rgba(120, 120, 120, 0) 85%
+  );
   width: 100%;
   transition: width 0.5s ease;
 }
@@ -261,21 +289,9 @@
   align-items: center;
   margin-top: calc(10vh - 10px);
   opacity: 0.5;
-  h1 {
-    color: white;
-    font-size: 4rem;
-    font-style: italic;
-    font-weight: 900;
-  }
 }
 
 .strip__large--right {
-  background: linear-gradient(
-    to right,
-    rgba(120, 120, 120, 1) 0%,
-    rgba(120, 120, 120, 1) 75%,
-    rgba(120, 120, 120, 0) 85%
-  );
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   position: absolute;
   width: 200vw;
@@ -293,6 +309,30 @@
 
 .strip__small--left {
   bottom: calc(5vh - 10px);
+}
+
+.strip__standard {
+  opacity: 0.3;
+  background: linear-gradient(
+    to left,
+    rgba(120, 120, 120, 1) 0%,
+    rgba(120, 120, 120, 1) 65%,
+    rgba(120, 120, 120, 0) 80%
+  );
+  width: 200vw;
+  position: absolute;
+  top: 5vh;
+  height: 1vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: calc(10vh - 10px);
+  opacity: 0.5;
+  transform: translateX(-100vw);
+}
+.strip__standard--rotated {
+  transform: rotateY(-40deg) translateX(-100vw);
+  transition: transform 0.1s ease;
 }
 
 .contact-top-line {

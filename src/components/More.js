@@ -9,6 +9,7 @@ const animation = [
 
   { className: "strip--appear", delay: 1500 },
   { className: "cube1--translate", delay: 1000 },
+
   { className: "cube1--rotate", delay: 3500 },
   { className: "cube1--grow", delay: 3800 },
   { className: "inputs--initial", delay: 4000 },
@@ -24,15 +25,15 @@ export default class More extends Component {
   };
 
   componentDidMount() {
-    this.applyTransition(animation);
+    this.applyTransition(animation, "cube1ClassName");
   }
 
-  applyTransition = transitions => {
+  applyTransition = (transitions, pieceOfState) => {
     transitions.forEach((cur, i) => {
       setTimeout(() => {
         console.log(cur);
         this.setState(prevState => ({
-          cube1ClassName: prevState.cube1ClassName.replace(
+          cube1ClassName: prevState[pieceOfState].replace(
             cur.className.trim(),
             ""
           )
@@ -42,7 +43,6 @@ export default class More extends Component {
   };
 
   render() {
-    console.log(this.state.cube1ClassName);
     return (
       <div className="wrap">
         <div className={this.state.cube1ClassName}>
