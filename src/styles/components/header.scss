@@ -94,12 +94,14 @@
 }
 
 .header--contact,
-.header--about {
+.header--about,
+.header--portfolio {
   perspective: 200vw;
   perspective-origin: 50vw 100vh;
 }
 .header__main--contact,
-.header__main--about {
+.header__main--about,
+.header__main--portfolio {
   transform: rotateY(-40deg);
   transition: transform 0.1s ease;
   transition-delay: 3s;

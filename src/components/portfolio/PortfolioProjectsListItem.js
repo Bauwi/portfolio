@@ -33,23 +33,23 @@ export default class PortfolioProjectsListItem extends Component {
       options,
       stats
     } = this.props.project;
+    console.log(this.props);
     return (
-      <div>
+      <div
+        onMouseEnter={() => this.props.onMouseEnterProject(title)}
+        onMouseLeave={() => this.props.resetProjectName()}
+      >
         <div className="grid-item" onClick={this.showModal}>
-          <img src={imgSrc} alt={`${title}'s cover`} className="" />
-
-          <h4 className="grid-item__title">{title}</h4>
-          <section className="grid-item__infos">
-            <div className="grid-item__infos__content">
-              <div>
-                <h5>{type}</h5>
-                <p>{description}</p>
+          <div className="cube-wrap">
+            <div className="cube">
+              <div className="cube__front">
+                <img src={imgSrc} alt="project cover" />
               </div>
-              <div className="grid-item__content__logos">
-                {renderLogos(options)}
-              </div>
+              <div className="cube__bottom">bottom</div>
+              <div className="cube__right">right</div>
+              <div className="cube__shadow">bottom</div>
             </div>
-          </section>
+          </div>
         </div>
         <div className="grid-modal">
           <Modal

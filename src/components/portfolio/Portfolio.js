@@ -4,10 +4,12 @@ import Filters from "./Filters";
 
 import PortfolioProjectsList from "./PortfolioProjectsList";
 import Loader from "../Loader";
+import Cube from "../Cube";
 
 export class Portfolio extends Component {
   state = {
-    loading: true
+    loading: true,
+    projectName: "Portfolio"
   };
 
   componentDidMount() {
@@ -15,6 +17,14 @@ export class Portfolio extends Component {
       this.setState(() => ({ loading: false }));
     }, 1000);
   }
+
+  onMouseEnterProject = project => {
+    this.setState(() => ({ projectName: project }));
+  };
+  resetProjectName = () => {
+    this.setState(() => ({ projectName: "" }));
+  };
+
   render() {
     if (this.state.loading) {
       return <Loader />;
@@ -22,8 +32,15 @@ export class Portfolio extends Component {
     return (
       <div className="portfolio__wrapper">
         <Filters />
+
         <div className="portfolio">
-          <PortfolioProjectsList />
+          <div className="portfolio__strip__large" />
+          <h1>My Work</h1>
+          <PortfolioProjectsList
+            onMouseEnterProject={this.onMouseEnterProject}
+            resetProjectName={this.resetProjectName}
+          />
+          <p className="portfolio__title">{this.state.projectName}</p>
         </div>
       </div>
     );
