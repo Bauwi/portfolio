@@ -20,9 +20,6 @@ export default class SkillsFront extends Component {
     return (
       <div className="skills__wrapper">
         <StyledWrapper header={WrapperHeader} footer={WrapperFooter}>
-          <div className="skills__front__title">
-            <h2>Front-End Skills</h2>
-          </div>
           <div className="skills__section">
             <div>
               <h3>

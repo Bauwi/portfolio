@@ -74,9 +74,6 @@ export default class ResumeMore extends Component {
     return (
       <div className="resume__wrapper">
         <StyledWrapper header={WrapperHeader} footer={WrapperFooter}>
-          <div>
-            <h2>More</h2>
-          </div>
           <ul className="resume__section">{this.renderMore()}</ul>
         </StyledWrapper>
       </div>

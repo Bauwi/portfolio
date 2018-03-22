@@ -98,9 +98,6 @@ export default class ResumePro extends Component {
     return (
       <div className="resume__wrapper">
         <StyledWrapper header={WrapperHeader} footer={WrapperFooter}>
-          <div>
-            <h2>Pro</h2>
-          </div>
           <ul className="resume__section">{this.renderPros()}</ul>
         </StyledWrapper>
       </div>

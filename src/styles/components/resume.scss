@@ -1,20 +1,44 @@
 @import "./../base/settings.scss";
-
+.resume {
+  background-image: linear-gradient(
+    to right,
+    hsl(0, 0%, 0%) 0%,
+    hsla(0, 0%, 0%, 0.738) 19%,
+    hsla(0, 0%, 0%, 0.541) 34%,
+    hsla(0, 0%, 0%, 0.382) 47%,
+    hsla(0, 0%, 0%, 0.278) 56.5%,
+    hsla(0, 0%, 0%, 0.194) 65%,
+    hsla(0, 0%, 0%, 0.126) 73%,
+    hsla(0, 0%, 0%, 0.075) 80.2%,
+    hsla(0, 0%, 0%, 0.042) 86.1%,
+    hsla(0, 0%, 0%, 0.021) 91%,
+    hsla(0, 0%, 0%, 0.008) 95.2%,
+    hsla(0, 0%, 0%, 0.002) 98.2%,
+    hsla(0, 0%, 0%, 0) 100%
+  );
+  font-weight: 900;
+  perspective: 200vw;
+  perspective-origin: 50vw 100vh;
+  width: 112vw;
+}
 .resume__wrapper {
   align-items: center;
   display: flex;
   flex-direction: column;
   height: 100vh;
   justify-content: center;
-  overflow-x: hidden;
-
+  overflow: hidden;
+  padding: 5rem 0;
   h2,
   h3,
   h4 {
-    color: #22264b;
+    color: lightgrey;
   }
   li {
     list-style-type: none;
+  }
+  div {
+    width: 100%;
   }
 }
 
@@ -43,11 +67,16 @@
       display: flex;
       justify-content: space-between;
       margin: 1rem 0rem;
+
+      h3 {
+        font-size: 2.5rem;
+        font-weight: 900;
+      }
     }
   }
 
   p {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     max-width: 80%;
   }
   > p:first-child {
@@ -77,7 +106,7 @@
   margin: 0.5rem 0;
   width: 50%;
   header {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 600;
     margin-right: 1rem;
     text-align: right;
@@ -89,18 +118,21 @@
       align-items: baseline;
       display: flex;
       p {
+        font-size: 1.8rem;
+        font-weight: 900;
+        letter-spacing: 3px;
         margin-right: 1rem;
       }
       a,
       p:nth-child(2) {
         color: #89bdd3;
         font-style: italic;
-        font-size: 1.2rem;
+        font-size: 1.6rem;
         margin-left: 0.5rem;
       }
     }
     > p {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       opacity: 0.5;
     }
   }

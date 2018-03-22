@@ -207,9 +207,6 @@ export default class ResumeRecent extends Component {
     return (
       <div className="resume__wrapper">
         <StyledWrapper header={WrapperHeader} footer={WrapperFooter}>
-          <div>
-            <h2>Recent</h2>
-          </div>
           <ul className="resume__section">{this.renderYear()}</ul>
         </StyledWrapper>
       </div>

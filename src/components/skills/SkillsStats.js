@@ -36,7 +36,6 @@ export class SkillsStats extends Component {
     return (
       <header className="skills__wrapper">
         <StyledWrapper header={WrapperHeader} footer={WrapperFooter}>
-          <h2>Figure Me Out !</h2>
           <div className="skills__section skills__section--stats">
             <ChartIllustr />
 

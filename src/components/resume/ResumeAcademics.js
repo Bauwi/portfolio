@@ -120,9 +120,6 @@ export default class ResumeAcademics extends Component {
     return (
       <div className="resume__wrapper">
         <StyledWrapper header={WrapperHeader} footer={WrapperFooter}>
-          <div>
-            <h2>Academics</h2>
-          </div>
           <ul className="resume__section  ">{this.renderAcademics()}</ul>
         </StyledWrapper>
       </div>

@@ -92,16 +92,21 @@
   color: #89bdd3 !important;
   transition: all ease 1s;
 }
-
+.header--,
 .header--contact,
 .header--about,
-.header--portfolio {
+.header--portfolio,
+.header--resume,
+.header--skills {
   perspective: 200vw;
   perspective-origin: 50vw 100vh;
 }
+.header__main--,
 .header__main--contact,
 .header__main--about,
-.header__main--portfolio {
+.header__main--portfolio,
+.header__main--resume,
+.header__main--skills {
   transform: rotateY(-40deg);
   transition: transform 0.1s ease;
   transition-delay: 3s;

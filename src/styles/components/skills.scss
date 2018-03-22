@@ -1,5 +1,28 @@
 @import "./../base/settings.scss";
 
+.skills {
+  background-image: linear-gradient(
+    to right,
+    hsl(0, 0%, 0%) 0%,
+    hsla(0, 0%, 0%, 0.738) 19%,
+    hsla(0, 0%, 0%, 0.541) 34%,
+    hsla(0, 0%, 0%, 0.382) 47%,
+    hsla(0, 0%, 0%, 0.278) 56.5%,
+    hsla(0, 0%, 0%, 0.194) 65%,
+    hsla(0, 0%, 0%, 0.126) 73%,
+    hsla(0, 0%, 0%, 0.075) 80.2%,
+    hsla(0, 0%, 0%, 0.042) 86.1%,
+    hsla(0, 0%, 0%, 0.021) 91%,
+    hsla(0, 0%, 0%, 0.008) 95.2%,
+    hsla(0, 0%, 0%, 0.002) 98.2%,
+    hsla(0, 0%, 0%, 0) 100%
+  );
+  font-weight: 900;
+  perspective: 200vw;
+  perspective-origin: 50vw 100vh;
+  width: 112vw;
+}
+
 .skills__wrapper {
   align-items: center;
   display: flex;
@@ -16,6 +39,10 @@
   li {
     list-style-type: none;
   }
+  div {
+    padding: 0 2rem;
+    width: 100%;
+  }
 }
 
 .skills__section {
@@ -30,7 +57,11 @@
     margin: 2rem;
   }
   h3 {
-    border-bottom: 1px solid$off-white;
+    border-bottom: 1px solid $off-white;
+    font-size: 2.5rem;
+  }
+  li {
+    font-size: 1.8rem;
   }
 }
 

@@ -1,13 +1,35 @@
 @import "./../base/settings.scss";
 
 .home {
+  background-image: linear-gradient(
+    to right,
+    hsl(0, 0%, 0%) 0%,
+    hsla(0, 0%, 0%, 0.738) 19%,
+    hsla(0, 0%, 0%, 0.541) 34%,
+    hsla(0, 0%, 0%, 0.382) 47%,
+    hsla(0, 0%, 0%, 0.278) 56.5%,
+    hsla(0, 0%, 0%, 0.194) 65%,
+    hsla(0, 0%, 0%, 0.126) 73%,
+    hsla(0, 0%, 0%, 0.075) 80.2%,
+    hsla(0, 0%, 0%, 0.042) 86.1%,
+    hsla(0, 0%, 0%, 0.021) 91%,
+    hsla(0, 0%, 0%, 0.008) 95.2%,
+    hsla(0, 0%, 0%, 0.002) 98.2%,
+    hsla(0, 0%, 0%, 0) 100%
+  );
+  font-weight: 900;
+  perspective: 200vw;
+  perspective-origin: 50vw 100vh;
+  width: 112vw;
   display: flex;
   flex-grow: 1;
   align-items: center;
-  height: 100vh;
+  height: 80vh;
 
   svg:nth-child(2) {
-    width: 100%;
+    height: 130%;
+    min-width: 180vw;
+    transform: rotateY(-50deg) translateX(-65vw);
   }
 }
 
@@ -42,7 +64,7 @@
 
 // Hair
 #Cheveux > path {
-  stroke: #333;
+  stroke: blue;
   animation-timing-function: ease;
   animation-fill-mode: forwards;
   animation-name: cheveux-tube-on;
@@ -57,7 +79,7 @@
 
 // Ears
 #OreilleGauche {
-  stroke: #333;
+  stroke: blue;
   stroke-dasharray: 3500;
   stroke-dashoffset: 3500;
   fill-opacity: 0;
@@ -69,7 +91,7 @@
 }
 
 #OreilleDroite {
-  stroke: #333;
+  stroke: blue;
   stroke-dasharray: 3500;
   stroke-dashoffset: 3500;
   fill-opacity: 0;
@@ -83,7 +105,7 @@
 // Eyes
 #FondOeilGauche,
 #FondOeilDroite {
-  stroke: #333;
+  stroke: blue;
   stroke-dasharray: 3500;
   stroke-dashoffset: 3500;
   fill-opacity: 0;
@@ -102,7 +124,7 @@
 // Mouth
 #LevreHaut,
 #LevreBas {
-  stroke: #333;
+  stroke: blue;
   stroke-dasharray: 3500;
   stroke-dashoffset: 3500;
   fill-opacity: 0;
@@ -130,7 +152,7 @@
 #NarineGauche > path:nth-child(3),
 #NarineGaucheSide > path:nth-child(1),
 #NarineGaucheSide > path:nth-child(3) {
-  stroke: #333;
+  stroke: blue;
   animation-duration: 1s;
   animation-delay: 9.8s;
 }
@@ -139,7 +161,7 @@
 #NarineDroiteSide > path:nth-child(1),
 #NarineGauche > path:nth-child(1),
 #NarineGaucheSide > path:nth-child(1) {
-  stroke: #333;
+  stroke: blue;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
   animation-name: eyes-tube-on;
@@ -159,7 +181,7 @@
 // Sourcils
 #SourcilGauche,
 #SourcilDroite {
-  stroke: #333;
+  stroke: blue;
   stroke-dasharray: 3500;
   stroke-dashoffset: 3500;
   fill-opacity: 0;
@@ -177,7 +199,7 @@
 
 #PaupiereGauche,
 #PaupiereDroite {
-  stroke: #333;
+  stroke: blue;
   stroke-dasharray: 3500;
   stroke-dashoffset: 3500;
   fill-opacity: 0;
@@ -194,7 +216,7 @@
 }
 
 #RefletLumiere {
-  stroke: #333;
+  stroke: blue;
   stroke-dasharray: 3500;
   stroke-dashoffset: 3500;
   fill-opacity: 0;
@@ -212,7 +234,7 @@
 }
 
 #Cou > path {
-  stroke: #333;
+  stroke: blue;
   stroke-dasharray: 3500;
   stroke-dashoffset: 3500;
   fill-opacity: 0;
@@ -260,54 +282,54 @@
 }
 @keyframes cheveux-tube-on {
   0% {
-    stroke: #22264b;
+    stroke: blue;
   }
   5% {
-    stroke: #333;
+    stroke: blue;
   }
   10% {
-    stroke: #22264b;
+    stroke: blue;
   }
   15% {
-    stroke: #333;
+    stroke: blue;
   }
   35% {
-    stroke: #22264b;
+    stroke: blue;
   }
   60% {
-    stroke: #333;
+    stroke: blue;
   }
   70% {
-    stroke: #22264b;
+    stroke: blue;
   }
   100% {
-    stroke: #22264b;
+    stroke: blue;
   }
 }
 @keyframes eyes-tube-on {
   0% {
-    stroke: #22264b;
+    stroke: blue;
   }
   5% {
-    stroke: #333;
+    stroke: blue;
   }
   10% {
-    stroke: #22264b;
+    stroke: blue;
   }
   15% {
-    stroke: #333;
+    stroke: blue;
   }
   35% {
-    stroke: #22264b;
+    stroke: blue;
   }
   60% {
-    stroke: #333;
+    stroke: blue;
   }
   70% {
-    stroke: #22264b;
+    stroke: blue;
   }
   100% {
-    stroke: #22264b;
+    stroke: blue;
   }
 }
 

@@ -6,8 +6,8 @@
 
   justify-content: space-between;
   height: 100vh;
-  width: calc(100vw - 6rem);
-  padding: 2rem 0;
+  width: 100%;
+  padding: 8rem 0 0 0;
   .styled-wrapper__header > p,
   footer > p {
     color: rgba(112, 112, 112, 0.5);
@@ -53,12 +53,12 @@
 }
 
 .styled-wrapper__text {
-  color: rgb(150, 150, 150);
-  font-family: "Special Elite", cursive;
+  color: lightgrey;
   font-size: 1.4rem;
   font-style: italic;
+  font-weight: 900;
   list-style-type: none;
-  padding-left: 1rem;
+  padding-left: 2rem;
 }
 
 .styled-wrapper__text--curly {

@@ -36,7 +36,7 @@ export default class Skills extends Component {
 
   render() {
     return (
-      <div>
+      <div className="skills">
         <div className="bookmark" onClick={this.showModal}>
           <Icon type="fork" />
         </div>

@@ -1,17 +1,21 @@
 @import "./../base/settings.scss";
 
 .slider {
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0px 0px 35px -4px #000000;
   min-height: 100vh;
   max-height: 100vh;
+  margin-left: -25vw;
+  transform: rotateY(-50deg);
 }
 
 .slider-nav {
   border-top: none;
   color: $off-white;
   display: flex;
-  font-size: 1.6rem;
-  justify-content: flex-end;
+  font-size: 2.5rem;
   position: fixed;
+  margin-top: -5rem;
   padding: 1rem 1rem;
   width: 100%;
   z-index: 98;
@@ -33,9 +37,9 @@
 }
 
 .slider-nav--navlink--active {
-  color: #22264b;
+  color: #d3d3d3;
   transition: all ease, 0.5s;
-  border-bottom: 1px solid #22264b;
+  border-bottom: 1px solid #d3d3d3;
   transition: all ease, 0.5s;
 }
 
@@ -124,7 +128,7 @@
 }
 
 .dotstyle-drawcircle--yellow svg circle {
-  stroke: #89bdd3;
+  stroke: #777;
 }
 
 .dotstyle-drawcircle svg circle {

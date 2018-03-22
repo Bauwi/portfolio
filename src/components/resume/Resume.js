@@ -18,7 +18,7 @@ export default class Resume extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="resume">
         <div className="bookmark" onClick={this.downloadPDF}>
           <Icon type="file-pdf" />
         </div>

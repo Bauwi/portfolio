@@ -5,12 +5,23 @@ import StackGrid, { transitions } from "react-stack-grid";
 import sizeMe from "react-sizeme";
 
 import PortfolioProjectsListItem from "./PortfolioProjectsListItem";
+import Loader from "../Loader";
 
 import getVisibleProjects from "../../selectors/filters";
 
 const { fade } = transitions;
 
 export class PortfolioProjectsList extends Component {
+  state = {
+    loading: true
+  };
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState(() => ({ loading: false }));
+    }, 1000);
+  }
+
   renderProjects = () => {
     return this.props.projects.map(project => (
       <PortfolioProjectsListItem
@@ -25,6 +36,13 @@ export class PortfolioProjectsList extends Component {
   render() {
     console.log(this.props.projects);
     const { size: { width } } = this.props;
+    if (this.state.loading) {
+      return (
+        <div className="portfolio__main">
+          <Loader />
+        </div>
+      );
+    }
     return (
       <div className="portfolio__main">
         <div className="portfolio__main__container">

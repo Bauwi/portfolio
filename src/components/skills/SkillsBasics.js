@@ -22,7 +22,6 @@ export default class SkillsBasics extends Component {
     return (
       <header className="skills__wrapper">
         <StyledWrapper header={WrapperHeader} footer={WrapperFooter}>
-          <h2>Basics</h2>
           <div className="skills__section">
             <div className="">
               <h3>VanillaJS Principles : </h3>
