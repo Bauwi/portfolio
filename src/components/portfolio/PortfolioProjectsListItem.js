@@ -36,7 +36,7 @@ export default class PortfolioProjectsListItem extends Component {
     console.log(this.props);
     return (
       <div
-        onMouseEnter={() => this.props.onMouseEnterProject(title)}
+        onMouseEnter={() => this.props.onMouseEnterProject(description)}
         onMouseLeave={() => this.props.resetProjectName()}
       >
         <div className="grid-item" onClick={this.showModal}>
@@ -45,9 +45,9 @@ export default class PortfolioProjectsListItem extends Component {
               <div className="cube__front">
                 <img src={imgSrc} alt="project cover" />
               </div>
-              <div className="cube__bottom">bottom</div>
-              <div className="cube__right">right</div>
-              <div className="cube__shadow">bottom</div>
+              <div className="cube__bottom" />
+              <div className="cube__right" />
+              <div className="cube__shadow" />
             </div>
           </div>
         </div>

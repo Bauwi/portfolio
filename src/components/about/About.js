@@ -6,17 +6,15 @@ import MapComponent from "./MapComponent";
 import applyTransition from "../../utils/applyTransition";
 
 const animation = [
-  { className: "about__id--appear", delay: 2500 },
-
-  { className: "about__plan--rotate", delay: 6000 },
-  { className: "about__mobility--dig", delay: 7000 },
-  { className: "about__flag--appear", delay: 8000 }
+  { className: "about__mobility--dig", delay: 5000 },
+  { className: "about__flag--appear", delay: 7000 }
 ];
 
 export default class About extends Component {
   state = {
-    aboutClassName:
-      "about about__id--appear about__plan--rotate about__mobility--dig about__flag--appear"
+    aboutClassName: "about about__mobility--dig about__flag--appear",
+    now: false,
+    maybe: false
   };
 
   componentDidMount() {
@@ -35,6 +33,14 @@ export default class About extends Component {
         }));
       }, cur.delay);
     });
+  };
+
+  handleNow = () => {
+    this.setState(prevState => ({ now: !prevState.now }));
+  };
+
+  handleMaybe = () => {
+    this.setState(prevState => ({ maybe: !prevState.maybe }));
   };
 
   render() {
@@ -70,10 +76,22 @@ export default class About extends Component {
                   <div className="flag__strip flag__strip--white" />
                   <div className="flag__strip flag__strip--red" />
                 </section>
+
                 <div className="about__mobility__cube__front__shadow" />
               </div>
-              <MapComponent />
+              <MapComponent now={this.state.now} maybe={this.state.maybe} />
             </div>
+            <footer className="about__mobility__legend">
+              <p onMouseEnter={this.handleNow} onMouseLeave={this.handleNow}>
+                now
+              </p>
+              <p
+                onMouseEnter={this.handleMaybe}
+                onMouseLeave={this.handleMaybe}
+              >
+                maybe
+              </p>
+            </footer>
           </div>
         </div>
       </div>

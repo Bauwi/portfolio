@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 const maybeCountries = [
-  "FR",
   "GB",
   "CA",
   "CH",
@@ -40,19 +39,19 @@ export default class Countries extends Component {
           <g id="countries">
             {React.Children.map(this.props.children, (country, i) => {
               const { id } = country.props;
+              const isSomethingSelected = this.props.now || this.props.maybe;
               let countryClassName = "country";
-              if (maybeCountries.includes(id)) {
-                countryClassName = countryClassName.concat(" country__maybe");
+
+              if (id === currentCountry && this.props.now) {
+                countryClassName = countryClassName.concat(" country--now");
+              } else if (maybeCountries.includes(id) && this.props.maybe) {
+                countryClassName = countryClassName.concat(" country--maybe");
               }
-              if (id === currentCountry) {
-                countryClassName = countryClassName.concat(" country__current");
-              }
-              if (id === this.props.selected) {
+              if (isSomethingSelected) {
                 countryClassName = countryClassName.concat(
-                  " country--selected"
+                  " country--not-concerned"
                 );
               }
-
               return React.cloneElement(country, {
                 className: countryClassName
               });

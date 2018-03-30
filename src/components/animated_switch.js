@@ -34,10 +34,11 @@ export default class AnimatedSwitch extends Switch {
     const style = {
       opacity: Animated.template`${this.state.animate}`,
       transform: Animated.template`
-				translate3d(${this.state.animate.interpolate({
-          inputRange: [0, 1],
-          outputRange: ["-2500px", "0px"]
-        })},0,0)
+      translateX(${this.state.animate.interpolate({
+        inputRange: [0, 1],
+        outputRange: ["-2500px", "0px"]
+      })}) 
+
       `
       // transform: Animated.template`
       // 	rotateY(${this.state.animate.interpolate({

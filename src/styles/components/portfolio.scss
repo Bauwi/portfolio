@@ -72,7 +72,7 @@
   padding: 10vh 0 10vh 30vh;
   width: 140vw;
 
-  min-height: 70vh;
+  // min-height: 70vh;
   transform: rotateY(-50deg);
   overflow-x: hidden;
   overflow-y: scroll;
@@ -224,7 +224,7 @@
       transform-origin: bottom center;
       transform: rotateX(90deg) rotateZ(90deg) translateX(7.5vw)
         translateY(7.5vw) translateZ(5vw);
-      transition: all 1s ease;
+      transition: width 1s ease, transform 1s ease;
     }
     .cube__shadow {
       opacity: 1;
@@ -240,19 +240,21 @@
 }
 
 .cube__right {
+  border: 5px solid rgba(200, 200, 200, 0.5);
   width: 0 !important;
   position: absolute;
-  background: grey;
+  background: darken(blue, 30%);
   transform: rotateY(270deg) translateZ(-20vw);
   transform-origin: center left;
   transition: width 1s ease;
 }
 
 .cube__bottom {
+  // border: 2px solid ;
   width: 0 !important;
   height: 20vw !important;
   position: absolute;
-  background: #333;
+  background: darken(blue, 45%);
   transform-origin: bottom center;
   transform: rotateX(90deg) rotateZ(90deg) translateZ(5vw);
   transform-origin: bottom center;

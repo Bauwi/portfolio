@@ -128,11 +128,12 @@
 }
 
 .dotstyle-drawcircle--yellow svg circle {
-  stroke: #777;
+  stroke: white;
 }
 
 .dotstyle-drawcircle svg circle {
-  fill: #c9c9c9;
+  fill: #333;
+  opacity: 0.5;
   stroke-width: 3;
   stroke-linecap: round;
   stroke-linejoin: round;
